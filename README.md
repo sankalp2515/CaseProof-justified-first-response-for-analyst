@@ -160,7 +160,7 @@ The older `/inspector` interface is available for local technical diagnostics. T
 
 [**Try CaseProof →**](https://8-233-217-230.sslip.io/app/?tour=start#/victim/start)
 
-Built by **BuildtoChange** · [MIT License](LICENSE)
+ [MIT License](LICENSE)
 
 </div>
 
