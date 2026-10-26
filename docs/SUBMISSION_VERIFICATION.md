@@ -10,7 +10,7 @@ The submission package contains the complete CaseProof React/Vite application, P
 
 | Verification | Result and limits |
 | --- | --- |
-| Canonical Linux backend regression | Earlier complete run: 378 passed. A release regression including subsequent route fixes is recorded below when complete. |
+| Canonical Linux backend release regression | **380 passed**, zero failures, in 345.26 seconds. Runs offline in the canonical Linux test image with this package's current `caseproof/` and `tests/` mounted read-only. Two warnings: upstream TestClient deprecation and the expected oversized-image safety test. |
 | Frontend release regression | 88 tests passed across 26 files; production build passed. |
 | Default local workflow | 85 browser checks across two new complaints, including both synthetic receiver acknowledgements and persisted ownership. |
 | Guided tour | Separate complete run: 54 checks, no uncaught browser errors. |
@@ -48,6 +48,25 @@ References: [Google spend-cap behavior](https://docs.cloud.google.com/billing/do
 ## Repository hygiene
 
 The publication excludes `.env`, private learner profile, browser sessions/cookies, customer-reply capabilities, runtime databases, Terraform state/variables and private recordings. An exact staged-content scan found no configured local credentials or high-confidence API/private-key patterns. Held untracked documents/media from the original checkout were not imported. The source license is retained.
+
+The initial public package is commit `312b821`. GitHub CI runs independently of the local results; an in-progress CI run is not a completed pass. New verification updates are committed separately from the initial publication.
+
+## Reproduce the local checks
+
+```sh
+docker build -t caseproof-tests .
+docker run --rm --network none -e DATA_DIR=/tmp/tests \
+  -e SQLITE_URL=sqlite:////tmp/tests/cases.db \
+  -e DUCKDB_PATH=/tmp/tests/bank.duckdb -e OBJECT_DIR=/tmp/tests/objects \
+  -e LLM_PROVIDER=gemini -e LLM_MODE=live -e CUSTOMER_PORTAL=false \
+  caseproof-tests python -m pytest -q --basetemp=/tmp/pytest -o cache_dir=/tmp/pytest-cache
+cd frontend
+npm ci --no-audit --no-fund
+npm test
+npm run build
+```
+
+The offline regression uses test-controlled provider adapters; it does not claim live Gemini calls. For real browser acceptance, start the default local stack and run `frontend/scripts/analyst-workspace-browser.mjs` with `CASEPROOF_BASE_URL=http://127.0.0.1:8246`. It creates new synthetic complaints and saves private test evidence under ignored `var/`. The optional live profile must be tested separately with supported retries; fixed provider timing is not guaranteed.
 
 ## Remaining release checks
 

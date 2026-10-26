@@ -2,6 +2,8 @@
 
 **Current publication/restoration record:** [docs/SUBMISSION_VERIFICATION.md](docs/SUBMISSION_VERIFICATION.md). The chronological notes below retain earlier attempts and superseded availability states. The Clueso export has since completed; sampled output frames show real UI throughout. Public access has been restored, but full cloud acceptance remains blocked by Vertex spend-cap propagation at the recorded test time.
 
+Release rerun: **380 backend tests passed** in the offline Linux test container using the current source/test trees; **88 frontend tests** and the production build passed. The initial submission package was pushed as `312b821` to `sankalp2515/CaseProof-justified-first-response-for-analyst`. Private runtime/media, credentials, learner profile and original checkout's held untracked files were excluded. Public Playwright acceptance submitted a fresh complaint but timed out waiting for assessment while Vertex reported a breached cap; it is not recorded as a passing end-to-end run.
+
 ## Technical package
 This folder contains the existing CaseProof product and assets from source revision `ad92cef00c5670704f465c88ed2700f2f87d0406`, plus local integration changes. See `SOURCE_PROVENANCE.md`. This is not a claim that the application was newly authored through the installed curriculum.
 

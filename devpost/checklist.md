@@ -4,7 +4,7 @@ This checklist records verification of the incorporated implementation. It does 
 
 - [x] Source provenance, license and component origin retained.
 - [x] Isolated local Compose runtime with no credentials required by default.
-- [x] Canonical Linux backend regression: 378 tests passed in the recorded local run.
+- [x] Canonical Linux backend release regression: 380 tests passed, zero failures; earlier acceptance run had 378 tests before subsequent route coverage.
 - [x] Frontend regression after integration fixes: 88 tests and production build passed.
 - [x] Local real-browser acceptance: 85 checks, two new complaints, both receiver acknowledgements and persisted follow-up.
 - [x] Separate complete local guided tour: 54 checks, no uncaught browser errors.
