@@ -5,7 +5,7 @@
   "billing_account": "01B4BC-4D9E77-DA75A0",
   "budget_currency": "INR",
   "budget_units": "2000",
-  "vertex_cap_units": "2000",
+  "vertex_cap_units": "3000",
   "run_cap_units": "5000",
   "bucket": "caseproof-511713-evidence-mumbai",
   "dataset": "caseproof_bank",

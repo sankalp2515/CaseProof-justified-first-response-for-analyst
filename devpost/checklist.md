@@ -11,7 +11,7 @@ This checklist records verification of the incorporated implementation. It does 
 - [x] Forty automated screen-state axe scans: no reported violations; manual WCAG conformance is not established.
 - [x] Live Gemini local run: uploaded receipt, OCR/extraction/summary, source inspection, graph, clarification, independent review, both deliveries and report output. Provider 503 failures required cooldown and supported retry.
 - [x] Narrated Clueso export: 154.854 seconds, 1080p; sampled frames show actual UI. Watermark remains; full audio/caption timing review is outstanding.
-- [ ] Restored public cloud journey verified end to end after shutdown.
+- [x] Restored public cloud journey: 51 checks, live Document AI/Vertex Gemini, both acknowledgements and persisted follow-up; 30 axe scans with no violations.
 - [ ] Final human video review and permanent public video link.
 - [ ] Competition entry fields and eligibility independently checked before submission.
 - [ ] Real analyst pilot and production banking/security/identity validation.

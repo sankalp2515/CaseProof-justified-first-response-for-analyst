@@ -2,7 +2,7 @@
 
 Current release record: **26 October 2026**. The source, plans, runtime profiles and demonstration must be assessed together. A successful local recording does not establish public cloud availability.
 
-**27 October, 01:24 IST recheck:** Vertex still returned `403 PERMISSION_DENIED: Spend cap breached`, and Billing now reports the increased INR 2,000 Vertex cap as **ENFORCED again**. The earlier CONFIGURED status below was transitional, not evidence of recovery. Cloud Run's INR 5,000 cap remains CONFIGURED. No further budget increase or billing-route switch has been made. Both repository CI runs for `312b821` and `2876d07` passed.
+**27 October recovery:** The owner approved a Vertex cap of INR 3,000. Billing confirms it and the unchanged INR 5,000 Cloud Run cap are CONFIGURED. A direct live Gemini request returned `OK`, and a complete public browser workflow passed **51 checks**, including reviewer approval and both delivery acknowledgements. Thirty axe scans reported zero violations; no uncaught browser errors occurred. The earlier INR 2,000 enforcement and failed attempts remain described below as recovery history, not current availability. See [public acceptance evidence](SUBMISSION_CLOUD_ACCEPTANCE.json).
 
 ## Product and source
 
@@ -24,26 +24,27 @@ The default local profile uses Tesseract/rules. The recorded live profile uses `
 
 ## Video
 
-The Clueso export is **154.854 seconds**, H.264 1920×1080 with AAC audio. It starts on the landing page and follows one case through victim reporting, analyst work, clarification, reviewer approval, report delivery and ownership. Samples every five seconds show actual UI throughout; no persistent blank scenes were observed. Full narration/caption timing review and the permanent public video URL remain outstanding. The export includes a Clueso watermark.
+The initial Clueso export is **154.854 seconds**, H.264 1920×1080 with AAC audio. A revised **167.05-second** export has been requested with a sharper opening, explicit analyst outcome and a new real invalid-amount validation/cancellation scene; its playback QA is pending. It starts on the landing page and follows one case through victim reporting, analyst work, clarification, reviewer approval, report delivery and ownership. Samples every five seconds show actual UI throughout; no persistent blank scenes were observed. Full narration/caption timing review and the permanent public video URL remain outstanding. The export includes a Clueso watermark.
 
-The recording uses the local live-Gemini profile. It does not claim to be a capture of the separately restored cloud deployment. It visibly shows meaningful outputs and role boundaries; invalid-input and provider-error recovery are tested elsewhere rather than fully demonstrated in this short video.
+The recording uses the local live-Gemini profile. It does not claim to be a capture of the separately restored cloud deployment. It visibly shows meaningful outputs and role boundaries. The revised project now includes an actual invalid-amount check after the delivered output; provider-error recovery remains documented separately rather than fully demonstrated in this short video.
 
 ## Existing cloud service restoration
 
-The existing public origin is **https://8-233-217-230.sslip.io/**. It had intentionally been stopped by restricting ingress and pausing background dispatch. At the owner's instruction, this release restored:
+Public origin: **https://8-233-217-230.sslip.io/**. It had intentionally been stopped by restricting ingress and pausing background dispatch. Recovery preserved the HTTPS load balancer, Cloud Armor, IAM-authenticated worker/scanner/simulator, instance/concurrency limits, durable data, processing queue and reconcile scheduler. Minimum instances remain zero, so a first request can cold-start.
 
-- Frontend/API ingress through the existing HTTPS load balancer, retaining the direct-ingress restriction and Cloud Armor.
-- IAM-authenticated worker, scanner and simulator ingress; no public invoker permissions were added to those services.
-- The existing processing queue and reconcile scheduler.
-- The existing instance/concurrency limits. Minimum instances remain zero; first-use cold starts can take time.
+The first attempts submitted real complaints but could not finish while Vertex returned `403 Spend cap breached`. The INR 2,000 cap re-enforced; the owner then explicitly approved INR 3,000. Both current service caps are CONFIGURED, not left lifted. These are separate service caps, not an account-wide ceiling. No billing-route switch was used.
 
-No service images were rebuilt, no Terraform was applied, and no data/volumes were deleted. The current cloud images therefore remain a separately deployed build; local source-image parity is not inferred.
+After billing recovery, the application still held a temporary 403 provider circuit for up to 24 hours. The worker was recycled. API recycling exposed another blocker: its old backend image digest had been deleted from Artifact Registry. The previous serving revision remained in place while recovery proceeded.
 
-The public landing page and `/health` returned **HTTP 200** after restoration. A real Playwright run started a fresh practice session and submitted a new PNG-evidence complaint. No uncaught browser errors occurred, but assessment did **not** finish within the test window: Vertex returned **403 PERMISSION_DENIED: Spend cap breached**.
+Rebuilt the backend from the published, locally tested source and deployed the same immutable digest to API, worker and simulator:
 
-Billing now reports the explicitly approved **₹2,000 Vertex AI cap as CONFIGURED** and the existing **₹5,000 Cloud Run cap as CONFIGURED**. Google documents that service recovery after lifting an enforced cap can take up to one hour. Neither cap was left lifted. These are separate service caps, not an account-wide spending ceiling; other cloud costs and the existing alert budget remain.
+`sha256:471aca8ef895b0dd7cdb6448732cc6195841e14b7555650cd22926c2750fccc8`
 
-**Public end-to-end acceptance is not yet passed.** After the billing block clears, verify actual processing, current-version reviewer approval, both acknowledgements and the delivered document before sharing the deployment as a fully working judge demo. Do not create repeated complaints to bypass a provider error or label a queued job successful.
+Ready revisions: API `caseproof-api-00024-9wx`, worker `caseproof-worker-00023-862`, simulator `caseproof-simulator-00020-mt5`. No Terraform apply, permission broadening, database reset or volume deletion occurred. Frontend/scanner retained their existing images; full image/source identity for those unchanged deployments is not asserted.
+
+**Public end-to-end acceptance passed:** one new practice complaint with PNG receipt, live Document AI OCR and Vertex `gemini-3.5-flash` extraction, analyst arrival alert, source citation, graph, actual scoped customer reply and reassessment, explicit unrelated-debit exclusion, analyst approval denial, reviewer approval, both synthetic receiver acknowledgements, readable delivered report and persisted owner/awaiting-external follow-up. Fifty-one checks passed; 30 screen-state axe scans reported zero violations; no uncaught browser errors. See [machine-readable evidence](SUBMISSION_CLOUD_ACCEPTANCE.json). Provider availability can still change; one passing run does not guarantee uninterrupted service.
+
+This is separate from the recorded local walkthrough. The earlier complete guided-tour test was local, not a claim that this public run exercised every tour step.
 
 References: [Google spend-cap behavior](https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps), [API cap update sequence](https://docs.cloud.google.com/billing/docs/how-to/budget-api-spend-cap).
 
@@ -72,8 +73,8 @@ The offline regression uses test-controlled provider adapters; it does not claim
 
 ## Remaining release checks
 
-1. Public cloud processing and full handoff after Vertex billing recovery; record the actual result.
-2. Confirm cloud image/source parity if deploying the new package later. Restoring access alone is not a redeployment.
+1. Public cloud processing and full handoff passed as recorded above; retain capacity and monitor existing budget alerts during judging.
+2. Backend now uses the tested package. Frontend/scanner retain their earlier images; do not infer complete image/source identity for unchanged deployments.
 3. Final human review of narration, captions, readability and watermark; upload the video to the required public host.
 4. Complete entry fields and event-specific eligibility/curriculum checks. Technical verification does not substitute for those requirements.
 5. Production identity, real bank integrations, operational/compliance review and practitioner outcome measurements remain outside the synthetic prototype.
