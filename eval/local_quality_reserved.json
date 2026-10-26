@@ -1,0 +1,19 @@
+{
+  "version": "local-quality-20261016-v1",
+  "scope": "Reserved synthetic evaluation; local OCR/rules, not live Gemini or human productivity",
+  "cases": [
+    {"id":"Q01","seed":143,"evidence":"cropped_png","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q02","seed":218,"evidence":"cropped_jpeg","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q03","seed":327,"evidence":"blurred_png","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q04","seed":412,"evidence":"no_receipt","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q05","seed":589,"evidence":"injection","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q06","seed":634,"evidence":"wrong_amount","expect_conflict":true,"expect_bank_match":true},
+    {"id":"Q07","seed":761,"evidence":"unknown_payment","expect_conflict":false,"expect_bank_match":false},
+    {"id":"Q08","seed":826,"evidence":"unreadable","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q09","seed":937,"evidence":"cropped_png","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q10","seed":1042,"evidence":"wrong_amount","expect_conflict":true,"expect_bank_match":true},
+    {"id":"Q11","seed":1159,"evidence":"injection","expect_conflict":false,"expect_bank_match":true},
+    {"id":"Q12","seed":1286,"evidence":"no_receipt","expect_conflict":false,"expect_bank_match":true}
+  ],
+  "invariants": ["no false-ready initial assessment", "no prohibited customer request", "candidate is not confirmed loss", "source categories remain separate", "money conservation", "material conflict blocks approval", "unreadable evidence blocks complete handoff"]
+}

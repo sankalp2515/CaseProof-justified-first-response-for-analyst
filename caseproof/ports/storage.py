@@ -1,0 +1,6 @@
+from typing import Protocol
+
+
+class StoragePort(Protocol):
+    def put(self, data: bytes, mime_type: str) -> tuple[str, str]: ...
+    def read(self, key: str) -> bytes: ...

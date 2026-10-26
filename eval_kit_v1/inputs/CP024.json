@@ -1,0 +1,45 @@
+{
+  "case_id": "CP024",
+  "family_id": "F06",
+  "scenario": "wrong_receipt_reference",
+  "variant": 4,
+  "split": "heldout",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP024-N",
+      "kind": "narrative",
+      "path": "fixtures/CP024/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP024-R",
+      "kind": "receipt",
+      "path": "fixtures/CP024/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP024-M",
+      "kind": "messages",
+      "path": "fixtures/CP024/initial/messages.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP024-L",
+      "kind": "mock_bank_record",
+      "path": "fixtures/CP024/initial/mock_bank_record.txt",
+      "mime_type": "text/plain"
+    }
+  ],
+  "followup_artifacts": [
+    {
+      "artifact_id": "CP024-F",
+      "kind": "clarification",
+      "path": "fixtures/CP024/followup/clarification.txt",
+      "mime_type": "text/plain"
+    }
+  ],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

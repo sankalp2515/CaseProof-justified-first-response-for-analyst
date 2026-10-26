@@ -1,0 +1,23 @@
+# Opt-in live Gemini profile; credentials stay in the ignored local .env.
+# Run with: docker compose -f compose.yaml -f compose.gemini.yaml up -d --wait
+services:
+  api:
+    env_file: [.env]
+    environment:
+      LLM_PROVIDER: gemini
+      LLM_MODE: live
+      GEMINI_MODEL: gemini-3.1-flash-lite
+      ALLOW_FALLBACK: "false"
+      OCR_PROVIDER: llm
+      LLM_MAX_CALLS_PER_CASE: "8"
+      LLM_DAILY_CALL_CAP: "100"
+  worker:
+    env_file: [.env]
+    environment:
+      LLM_PROVIDER: gemini
+      LLM_MODE: live
+      GEMINI_MODEL: gemini-3.1-flash-lite
+      ALLOW_FALLBACK: "false"
+      OCR_PROVIDER: llm
+      LLM_MAX_CALLS_PER_CASE: "8"
+      LLM_DAILY_CALL_CAP: "100"

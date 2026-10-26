@@ -1,0 +1,6 @@
+SYNTHETIC INSTITUTION RECORD
+Customer Ananya Demo
+Reference SYNTH-TX-0021
+Amount INR 48685
+Date 2026-10-01T11:29:00+05:30
+This ledger is a fictional test authority, not a real bank verification.

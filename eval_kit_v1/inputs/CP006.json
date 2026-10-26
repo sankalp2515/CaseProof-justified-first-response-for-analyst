@@ -1,0 +1,33 @@
+{
+  "case_id": "CP006",
+  "family_id": "F02",
+  "scenario": "missing_receipt",
+  "variant": 2,
+  "split": "dev",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP006-N",
+      "kind": "narrative",
+      "path": "fixtures/CP006/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP006-M",
+      "kind": "messages",
+      "path": "fixtures/CP006/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [
+    {
+      "artifact_id": "CP006-F",
+      "kind": "receipt",
+      "path": "fixtures/CP006/followup/receipt_complete.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

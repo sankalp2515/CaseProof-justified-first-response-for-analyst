@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-17",
+  "branch": "codex/landing-demo-journey",
+  "snapshot_base": "3d6c5ea750c084c1cc98236fa4d6bcce4aab5c9d",
+  "local_preview": "http://caseproof-journey.localhost:8188/",
+  "backend": "isolated API 8184; built nginx 8188; Vite 5178",
+  "processing": "real Tesseract, local literal rules, durable worker, two local simulator receivers",
+  "live_google_verified": false,
+  "deployed": false,
+  "frontend_tests_passed": 49,
+  "build_passed": true,
+  "browser_acceptance_assertions": 30,
+  "fresh_acceptance_complaints": 2,
+  "mixed_evidence_assertions": 19,
+  "built_visual_assertions": 16,
+  "sampled_axe_scans": 15,
+  "axe_violations": 0,
+  "cloud_adapter_contract_tests_passed": 3,
+  "cloud_adapter_note": "Local doubles; catalogue naming regression reproduced before fix.",
+  "document": "Actual UI HTML download, exact delivered revision/digest and sourced paths; Chromium A4 PDF, 3 pages, untagged",
+  "code_review": "No significant introduced findings; existing cloud name synchronization defect fixed and tested.",
+  "limitations": [
+    "PNG/JPEG/UTF-8 intake only, 5MiB each, six-artifact/20MiB case cap can limit later reply capacity",
+    "Trail requires available independent bank records; arbitrary evidence never creates downstream records",
+    "Optional live AI sample-writing and Google auth remain unverified",
+    "Sampled axe scans are not full accessibility certification; PDF untagged",
+    "Readiness and delivery do not imply a real freeze, refund, filing or closure"
+  ],
+  "linux_regression": {
+    "passed": 360,
+    "failed": 0,
+    "warnings": 2,
+    "duration_seconds": 521.01,
+    "note": "Full source snapshot before the final cloud catalogue-name synchronization; the three affected cloud contract tests were rerun after that fix and passed. Warnings: deprecated Starlette httpx test client and intentional oversized-image safety fixture."
+  },
+  "checks_not_run_live": [
+    "Google authentication",
+    "Gemini/Vertex sample writing",
+    "Document AI",
+    "Cloud deployment/delivery"
+  ]
+}

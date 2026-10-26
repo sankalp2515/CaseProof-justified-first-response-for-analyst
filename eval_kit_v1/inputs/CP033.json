@@ -1,0 +1,39 @@
+{
+  "case_id": "CP033",
+  "family_id": "F09",
+  "scenario": "duplicate_evidence",
+  "variant": 1,
+  "split": "heldout",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP033-N",
+      "kind": "narrative",
+      "path": "fixtures/CP033/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP033-R",
+      "kind": "receipt",
+      "path": "fixtures/CP033/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP033-M",
+      "kind": "messages",
+      "path": "fixtures/CP033/initial/messages.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP033-MD",
+      "kind": "messages",
+      "path": "fixtures/CP033/initial/messages_duplicate.png",
+      "mime_type": "image/png",
+      "duplicate_of": "CP033-M"
+    }
+  ],
+  "followup_artifacts": [],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+pydantic-settings
+sqlalchemy
+duckdb
+google-genai
+google-auth
+requests
+httpx
+typer
+pillow
+pytest
+pytz
+filelock==3.20.3

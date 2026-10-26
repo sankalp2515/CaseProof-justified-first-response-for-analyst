@@ -1,0 +1,32 @@
+{
+  "case_id": "CP048",
+  "family_id": "F12",
+  "scenario": "benign_or_out_of_scope_allegation",
+  "variant": 4,
+  "split": "safety",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP048-N",
+      "kind": "narrative",
+      "path": "fixtures/CP048/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP048-R",
+      "kind": "receipt",
+      "path": "fixtures/CP048/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP048-M",
+      "kind": "messages",
+      "path": "fixtures/CP048/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

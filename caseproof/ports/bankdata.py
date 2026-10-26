@@ -1,0 +1,6 @@
+from typing import Protocol
+
+
+class BankDataPort(Protocol):
+    def transactions(self, account: str) -> list[dict]: ...
+    def complaints(self, start: str, end: str) -> list[dict]: ...

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CaseProof | Bank simulator</title>
+    <link rel="stylesheet" href="/inspector.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/inspector#dashboard" class="brand">CaseProof</a
+      ><span>Local bank administrator · synthetic data only</span>
+    </header>
+    <main style="max-width: 1000px; margin: 36px auto; padding: 24px">
+      <a href="/inspector#dashboard">Back to analyst workspace</a>
+      <h1>Cedar Demo Bank simulator</h1>
+      <p>
+        Prepare bank records before opening a complaint. Victim uploads remain
+        separate evidence.
+      </p>
+      <p>
+        All people, accounts, banks and transactions here are fictional. This is
+        a prototype of bank-side data access, not a real connection or
+        regulatory validation.
+      </p>
+      <section class="panel">
+        <h2>1. Create a fictional bank dataset</h2>
+        <label for="network-id">Dataset name</label
+        ><input id="network-id" maxlength="64" />
+        <button id="network-create">Create bank dataset</button>
+        <p id="simulator-status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel" id="network-result" hidden>
+        <h2>2. Open a new complaint for an existing customer</h2>
+        <p id="network-summary"></p>
+        <label for="bank-account">Customer account</label
+        ><input id="bank-account" readonly />
+        <label for="bank-contact">First contact</label
+        ><input id="bank-contact" readonly />
+        <label for="bank-reported">Reported at</label
+        ><input id="bank-reported" readonly />
+        <p>
+          <a id="receipt-download" download>Download victim payment image</a> ·
+          <a id="dataset-download" download>Inspect bank dataset JSON</a>
+        </p>
+        <p>
+          Open a complaint in the analyst workspace using this account and these
+          times. The complaint starts empty. Create its private customer link,
+          then upload the downloaded image and statement.
+        </p>
+        <a id="new-complaint" href="/inspector#dashboard"
+          >Open analyst workspace</a
+        >
+        <label for="initial-statement">Victim’s first statement</label
+        ><textarea id="initial-statement" rows="4" readonly></textarea>
+        <h2>3. Simulate receiving downstream bank observations</h2>
+        <p>
+          Before these reports arrive, the money position is unknown. Publishing
+          them supplies sourced balances and onward transfers, then reprocesses
+          affected complaints.
+        </p>
+        <button id="publish-reports">Publish downstream bank reports</button>
+        <button id="refresh-bank-data">Refresh synthetic bank observations</button>
+        <p>Bank observations expire after 15 minutes in this demo. Refresh creates new
+          observations from this simulator’s unchanged bank world and reprocesses the complaint.
+          Earlier reports and approvals remain in history.</p>
+        <label for="followup-statement"
+          >Victim’s response if asked about the additional debit</label
+        ><textarea id="followup-statement" rows="4" readonly></textarea>
+        <p>
+          Return to the analyst case to inspect matching, tracing and
+          requirements. A reviewer must approve the current revision before the
+          two simulated reports can be sent.
+        </p>
+        <details>
+          <summary>What is simulated?</summary>
+          <p>
+            Customer profiles and own-bank debit history, the downstream banks
+            and reporting acknowledgements. The demo policy is team-authored. No
+            generated document is an official regulation, and no funds are held
+            or returned.
+          </p>
+        </details>
+      </section>
+    </main>
+    <script src="/simulator.js" defer></script>
+  </body>
+</html>

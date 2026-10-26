@@ -1,0 +1,39 @@
+{
+  "case_id": "CP020",
+  "family_id": "F05",
+  "scenario": "amount_conflict",
+  "variant": 4,
+  "split": "heldout",
+  "language": "Hindi and English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP020-N",
+      "kind": "narrative",
+      "path": "fixtures/CP020/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP020-R",
+      "kind": "receipt",
+      "path": "fixtures/CP020/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP020-M",
+      "kind": "messages",
+      "path": "fixtures/CP020/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [
+    {
+      "artifact_id": "CP020-F",
+      "kind": "clarification",
+      "path": "fixtures/CP020/followup/clarification.txt",
+      "mime_type": "text/plain"
+    }
+  ],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

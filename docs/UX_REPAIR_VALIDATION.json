@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-17",
+  "branch": "codex/landing-demo-journey",
+  "baseline_commit": "d757065",
+  "preview": "http://caseproof-journey.localhost:8188/",
+  "backend": "isolated API 8184; nginx frontend 8188; same-origin proxy",
+  "provider_modes": "Tesseract OCR + local literal extraction; server-owned bank-simulator samples",
+  "live_google_verified": false,
+  "deployed": false,
+  "frontend_tests": {
+    "passed": 58,
+    "failed": 0,
+    "log": "var/ux-repair/tests-delivery.log"
+  },
+  "build": {
+    "passed": true,
+    "log": "var/ux-repair/build-delivery2.log"
+  },
+  "linux_regression": {
+    "passed": 361,
+    "failed": 0,
+    "warnings": 2,
+    "seconds": 765.9,
+    "source_snapshot_sha256": "9e301a236fb4a20e24259709c8f944b804dc8a3104f4308328ebff169eea17c8",
+    "log": "var/ux-repair/backend-final.log",
+    "scope": "Source snapshot after compact payee support and per-network locking. Final full-identifier boundary tests, human account labels, catalogue v5/version notice and selected-amount projection refinements are covered by the subsequent affected checks below."
+  },
+  "post_snapshot_backend_checks": {
+    "passed": 13,
+    "failed": 0,
+    "warnings": 1,
+    "log": "var/ux-repair/affected-latest.log",
+    "scope": "Complete-identifier boundary including negative suffixes, real local API intake/priority, cloud adapter workflow with service doubles, legacy/aged catalogue handling, compact identity uniqueness."
+  },
+  "guided_journey": {
+    "assertions": 35,
+    "case_id": "CASE-d282dc5810658a4f",
+    "result": "Actual Samer report, timing warning, generated PNGs through real OCR, priority alert, analyst/reviewer roles, both simulator receipts, saved follow-up and twelve-step tour completion",
+    "log": "var/ux-repair/guided-run-5.log"
+  },
+  "repeated_journeys": {
+    "assertions": 30,
+    "complaints": 2,
+    "result": "Two additional fresh complaints, real bank receipt OCR, clarification/reply/new revision, reviewer approval, both acknowledgements and persistence",
+    "log": "var/ux-repair/repeated-acceptance.log"
+  },
+  "accessibility": {
+    "sampled_axe_scans": 13,
+    "violations": 0,
+    "limits": "Sampled scans, not a full WCAG certification. Previously generated print PDF is untagged."
+  },
+  "viewports": [
+    "1242x668",
+    "627x668",
+    "390x668",
+    "1242x400",
+    "390x844",
+    "768x844",
+    "1280x900",
+    "1440x900"
+  ],
+  "code_review": "Three tour lifecycle/completion findings fixed with regression coverage. Identifier-suffix truncation finding fixed with negative tests.",
+  "limits": [
+    "Local AI writing remains unavailable; live Google sign-in/Gemini/Document AI not verified.",
+    "Fresh catalogue v5 needed to see new identities; existing bank history and delivered packets are immutable.",
+    "PNG/JPEG/UTF-8 intake only; 5MiB each, existing six-artifact/20MiB case cap can limit later replies.",
+    "Arbitrary unsupported or ambiguous evidence may require review; no fabricated bank trail or automatic recovery.",
+    "No production launch certification; no merge, push or deployment performed."
+  ]
+}

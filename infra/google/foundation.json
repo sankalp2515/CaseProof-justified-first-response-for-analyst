@@ -1,0 +1,15 @@
+{
+  "project_id": "caseproof-511713",
+  "project_number": "273389900025",
+  "region": "asia-south1",
+  "billing_account": "01B4BC-4D9E77-DA75A0",
+  "budget_currency": "INR",
+  "budget_units": "2000",
+  "vertex_cap_units": "2000",
+  "run_cap_units": "5000",
+  "bucket": "caseproof-511713-evidence-mumbai",
+  "dataset": "caseproof_bank",
+  "queue": "caseproof-processing",
+  "repository": "caseproof",
+  "runtime_account": "caseproof-runtime"
+}

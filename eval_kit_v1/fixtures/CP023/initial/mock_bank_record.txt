@@ -1,0 +1,6 @@
+SYNTHETIC INSTITUTION RECORD
+Customer Meera Demo
+Reference SYNTH-TX-0023
+Amount INR 8985
+Date 2026-10-03T11:29:00+05:30
+This ledger is a fictional test authority, not a real bank verification.

@@ -1,0 +1,1 @@
+I selected the wrong receipt. The payment I am reporting has reference SYNTH-TX-0021; the fictional bank record refers to this payment.

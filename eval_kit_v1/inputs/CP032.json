@@ -1,0 +1,26 @@
+{
+  "case_id": "CP032",
+  "family_id": "F08",
+  "scenario": "required_evidence_unavailable",
+  "variant": 4,
+  "split": "heldout",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP032-N",
+      "kind": "narrative",
+      "path": "fixtures/CP032/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP032-M",
+      "kind": "messages",
+      "path": "fixtures/CP032/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

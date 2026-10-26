@@ -1,0 +1,289 @@
+{
+  "date": "2026-10-18",
+  "target_worktree": "E:\\Codex Projects\\CaseProof",
+  "target_branch": "main",
+  "starting_main": "896a8a94fa0fb4a515c36811265e00dac3aa0284",
+  "source": "a637291b41e14aaa6ec0d452eacbef4b79aa7b4a",
+  "integration_commits": [
+    "0c50d06",
+    "b7de54e",
+    "a6e8a2f",
+    "abb78fd"
+  ],
+  "status": "integrated; no deployment performed",
+  "preexisting_files_preserved": 22,
+  "deployment_configuration_changes": false,
+  "tests": {
+    "frontend": {
+      "passed": 64,
+      "files": 21,
+      "log": "var/frontend-main-integration/frontend-tests-final.log"
+    },
+    "production_build": {
+      "status": "passed",
+      "log": "var/frontend-main-integration/frontend-build-final.log"
+    },
+    "affected_backend": {
+      "passed": 34,
+      "skipped": 4,
+      "skip_reason": "Four pixel variants skip on Windows without Tesseract; all four were separately verified through the real Linux Tesseract service.",
+      "warnings": [
+        "Pre-existing Starlette TestClient httpx deprecation"
+      ],
+      "log": "var/frontend-main-integration/backend-tests-final.log"
+    },
+    "browser_acceptance": {
+      "passed": 36,
+      "checks": [
+        "Fresh practice has no fabricated complaints",
+        "New complaint 1 submitted with actual image",
+        "Real OCR/worker settled complaint 1",
+        "Urgent eligibility is separate from incomplete full handoff",
+        "New complaint arrives automatically in analyst queue",
+        "Arrival notification visible to analyst",
+        "Identity switches do not create duplicate unread arrivals",
+        "Backend trail rendered as account graph",
+        "Actual missing-information link reply received",
+        "Reply creates a new assessment revision",
+        "Additional debit explicitly denied",
+        "Analyst reviewer-only control disabled",
+        "Both simulator acknowledgements recorded",
+        "Delivered report readable as a document",
+        "Owner and awaiting_external follow-up saved",
+        "Follow-up survives reload",
+        "New complaint 2 submitted with actual image",
+        "Real OCR/worker settled complaint 2",
+        "Urgent eligibility is separate from incomplete full handoff",
+        "New complaint arrives automatically in analyst queue",
+        "Arrival notification visible to analyst",
+        "Identity switches do not create duplicate unread arrivals",
+        "Backend trail rendered as account graph",
+        "Actual missing-information link reply received",
+        "Reply creates a new assessment revision",
+        "Additional debit explicitly denied",
+        "Analyst reviewer-only control disabled",
+        "Both simulator acknowledgements recorded",
+        "Delivered report readable as a document",
+        "Owner and awaiting_external follow-up saved",
+        "Follow-up survives reload",
+        "Victim no body overflow at 390",
+        "Victim no body overflow at 768",
+        "Analyst no body overflow at 1280",
+        "Analyst no body overflow at 1440",
+        "No uncaught browser errors"
+      ],
+      "cases": [
+        "CASE-11e818a2c839bae2",
+        "CASE-6f8ccfd365822832"
+      ],
+      "axe_scans": 10,
+      "axe_violations": 0,
+      "page_errors": [],
+      "decision_stages": [
+        {
+          "caseId": "CASE-11e818a2c839bae2",
+          "stage": "before clarification",
+          "revision": 7,
+          "readiness": "REVIEW_REQUIRED",
+          "urgentReferral": {
+            "eligible": true,
+            "transaction_ids": [
+              "SIM-FD65CCC94B-T1"
+            ],
+            "reason": "Identified disputed bank debit; narrative and downstream trail are separate."
+          },
+          "unknowns": [
+            "all_transfers_accounted"
+          ],
+          "nextAction": {
+            "owner": "fraud_analyst",
+            "action": "Request missing customer information",
+            "request_id": "REQ-confirm_additional_transfer",
+            "reason": "Please confirm whether the additional debit belongs to this complaint and, if available, share the relevant call-log crop."
+          }
+        },
+        {
+          "caseId": "CASE-11e818a2c839bae2",
+          "stage": "after clarification and review",
+          "revision": 14,
+          "readiness": "COMPLETE_CANDIDATE",
+          "deliveredKinds": [
+            "cfcfrms_report_update",
+            "case_ticket"
+          ]
+        },
+        {
+          "caseId": "CASE-6f8ccfd365822832",
+          "stage": "before clarification",
+          "revision": 7,
+          "readiness": "REVIEW_REQUIRED",
+          "urgentReferral": {
+            "eligible": true,
+            "transaction_ids": [
+              "SIM-6805FAC5C2-T1"
+            ],
+            "reason": "Identified disputed bank debit; narrative and downstream trail are separate."
+          },
+          "unknowns": [
+            "all_transfers_accounted"
+          ],
+          "nextAction": {
+            "owner": "fraud_analyst",
+            "action": "Request missing customer information",
+            "request_id": "REQ-confirm_additional_transfer",
+            "reason": "Please confirm whether the additional debit belongs to this complaint and, if available, share the relevant call-log crop."
+          }
+        },
+        {
+          "caseId": "CASE-6f8ccfd365822832",
+          "stage": "after clarification and review",
+          "revision": 14,
+          "readiness": "COMPLETE_CANDIDATE",
+          "deliveredKinds": [
+            "cfcfrms_report_update",
+            "case_ticket"
+          ]
+        }
+      ],
+      "log": "var/frontend-main-integration/browser-acceptance.log"
+    },
+    "full_linux_suite": {
+      "status": "stopped; not counted as passing",
+      "reason": "No test output was observed during the supplementary Windows source-mount run before it was stopped after approximately five minutes. Only that disposable test container was stopped; no full-suite pass is claimed."
+    },
+    "guided_journey": {
+      "status": "passed",
+      "passed": 35,
+      "case": "CASE-4effb3fbcf46be54",
+      "checks": [
+        "Search is a single aligned control at 1242",
+        "Identity caption and select share a left edge",
+        "Search is a single aligned control at 627",
+        "Search is a single aligned control at 390",
+        "Cases is an all-session history register, not duplicate KPIs",
+        "Tour keeps the landing destination",
+        "Tour 1 actions inside 668px viewport",
+        "Tour 2 actions inside 668px viewport",
+        "Tour cannot jump past incomplete intake",
+        "Tour footer accessible at 627x668",
+        "Tour footer accessible at 390x668",
+        "Tour footer accessible at 1242x400",
+        "Selected scam victim has compact bank-backed practice payee",
+        "Payment selector describes newest-first ordering",
+        "Tour 3 actions inside 668px viewport",
+        "After-payment contact time requires explicit confirmation",
+        "Tour 4 actions inside 668px viewport",
+        "Local provider explanation replaces disabled AI affordance",
+        "Tour 5 actions inside 668px viewport",
+        "Golden-hour case triggers reference-style alert on open analyst queue",
+        "Bank-selected alert amount is sourced before OCR",
+        "First contact does not replace the bank debit clock",
+        "Tour 6 actions inside 668px viewport",
+        "New realistic handle survives actual OCR and matching",
+        "Role distinction is visible without opening a separate guide",
+        "Tour 7 actions inside 668px viewport",
+        "Tour 8 actions inside 668px viewport",
+        "Tour 9 actions inside 668px viewport",
+        "Tour 10 actions inside 668px viewport",
+        "Analyst cannot approve the handoff",
+        "Tour 11 actions inside 668px viewport",
+        "Guided case reaches both actual simulator acknowledgements",
+        "Tour 12 actions inside 668px viewport",
+        "Tour Finish requires the actual completed handoff and ownership",
+        "Tour ends after real handoff without uncaught UI errors"
+      ],
+      "axe_scans": 3,
+      "axe_violations": 0,
+      "page_errors": [],
+      "log": "var/frontend-main-integration/guided-journey-final.log"
+    },
+    "original_packet_document": {
+      "status": "passed",
+      "caseId": "CASE-11e818a2c839bae2",
+      "packetId": "SYNTH-PACKET-bbcb4bf86c15da4a",
+      "revision": 14,
+      "checks": [
+        "Actual UI downloads the original approved handoff",
+        "Document includes the sourced money-trail paths",
+        "Both distinct receivers acknowledged this packet revision",
+        "Original handoff renders to an actual printable PDF"
+      ],
+      "log": "var/frontend-main-integration/document-check.log"
+    },
+    "receipt_pixel_regressions": {
+      "status": "passed",
+      "count": 4,
+      "checks": [
+        {
+          "payee": "narmada.traders.nwwatmcffm@cedardemo",
+          "matched_from_pixels": true,
+          "IST_preserved": true,
+          "no_reference_invented": true
+        },
+        {
+          "payee": "narmada.traders.tufuksudmu@cedardemo",
+          "matched_from_pixels": true,
+          "IST_preserved": true,
+          "no_reference_invented": true
+        },
+        {
+          "payee": "narmada.traders.knahwrthtd@cedardemo",
+          "matched_from_pixels": true,
+          "IST_preserved": true,
+          "no_reference_invented": true
+        },
+        {
+          "payee": "narmada.traders.rrkhmscska@cedardemo",
+          "matched_from_pixels": true,
+          "IST_preserved": true,
+          "no_reference_invented": true
+        }
+      ],
+      "provider": "tesseract",
+      "log": "var/frontend-main-integration/pixel-ocr-regressions.json"
+    },
+    "lint": {
+      "status": "passed",
+      "log": "var/frontend-main-integration/lint-final.log"
+    }
+  },
+  "local_stack": {
+    "project": "caseproof-predeploy",
+    "url": "http://127.0.0.1:8198",
+    "data": "Independent project volumes; existing deployment and journey stacks untouched",
+    "provider": "local Tesseract/literal rules with real local workers and receiver simulators"
+  },
+  "cloud_scope": {
+    "existing_staging": "Document AI + Vertex AI Gemini; preserved",
+    "new_live_cloud_run": "Not performed during integration; requires later authorised candidate validation",
+    "staff_auth": "Existing configuration preserved; live sign-in not newly verified"
+  },
+  "remaining_release_gates": [
+    "Run candidate image offline/full suite and preserve all results",
+    "Authorised live staging regression with Document AI, Gemini, scanner, routing and correct staff access profile",
+    "Performance/concurrency and unfamiliar-input acceptance",
+    "Accessibility checks beyond sampled axe scans"
+  ],
+  "handoff": "docs/FRONTEND_REDEPLOY_HANDOFF_FOR_CLAUDE.md",
+  "integration_failures_repaired": [
+    "Initial merge temporarily expanded the catalogue and duplicated normal-customer names; restored the main six-network pairing and marked-victim selection, then reran checks.",
+    "Guide initially blocked correctly on receipt_association after monospaced OCR dropped a payee prefix; improved actual sample pixels and passed four real OCR checks plus the full guide rerun.",
+    "Document helper initially used URL-escaped paths on Windows; switched to fileURLToPath and explicit output-directory creation; final download/PDF check passed.",
+    "An early document check raced API restart; bounded health waiting added and final verification passed."
+  ],
+  "code_sha256": {
+    "caseproof/api/demo_evidence.py": "b4932aaef756b6fca051ded0d76992c4b8a4be80223591d2396563cf50b4939e",
+    "caseproof/cloud/victim.py": "b6c17933460f394e6c94d0c1d9a5831dc33d8dcb117b2019e42d53669ad1dd8c",
+    "caseproof/cloud/bank_network.py": "ee7de145665c892f08157c9bb4d7b28c0e6e81d922da23a33c6e0ad7d315c28b",
+    "caseproof/domain/intake_priority.py": "65af4dcf475c10ba6588c5754c08d1064edb882674eb7e02ebda8818b2bf1472",
+    "local_services/demo_world.py": "7780b995dfa30a2638cbef0a94da20d0d400a6d1c5da0a18c3454b69e10751bf",
+    "frontend/src/LiveApp.jsx": "49d4765e591c832a50eb1280ec471cffef3cfb938d3b57c9a057ceac0a599d3e",
+    "frontend/src/pages/victim/Victim.jsx": "c709c6c439ca95af8720faa86eeb93134590713af75901e7f3f704e54843856c",
+    "frontend/src/pages/victim/SampleEvidence.jsx": "35366e31af1c05e7b4637a2a01989fbcf70784e5ff70855fb576222cd7f7fb06",
+    "frontend/src/components/Gemini.jsx": "dcecc8911c99a06cd56f9138b268028fb811c302f491bf43bcdd28905e126f07",
+    "frontend/src/pages/case/PacketDocument.jsx": "f1bac83d9cd71a584e0f51f7bbbda42126b81199d1c92a6c50b1f8990023a87c",
+    "frontend/src/tour/Tour.jsx": "e2b53033318817f75025a7d2af7ff0b631c223bdeb4837d6e19a0835c0bba56d",
+    "frontend/src/quality.css": "4b58831b7a1555a115fb74f065ad2eaea8f84f54618933ae21d909d9f067dc85",
+    "frontend/public/landing/index.html": "3a26ea3f2dcf5561d326b83db69a99e524f67065a4636ba5b28beb3768725828"
+  }
+}

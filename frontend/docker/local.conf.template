@@ -1,0 +1,65 @@
+# CaseProof frontend service. Static React assets are served here; every other
+# path (API, customer capability links, readiness, Inspector) goes to `api`.
+server {
+    listen 8080;
+    server_name _;
+    client_max_body_size 6m;
+    access_log off;
+    server_tokens off;
+    # Relative Location headers: the public scheme/port differ from this listener.
+    absolute_redirect off;
+    # Docker's embedded DNS: re-resolve so an API restart does not strand nginx.
+    resolver 127.0.0.11 valid=5s ipv6=off;
+
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy no-referrer always;
+    add_header X-Frame-Options DENY always;
+
+    location = / {
+        root /usr/share/nginx/html;
+        try_files /app/landing/index.html =404;
+        add_header Cache-Control no-cache always;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy no-referrer always;
+        add_header X-Frame-Options DENY always;
+    }
+
+    location = /app {
+        return 301 /app/;
+    }
+
+    location /app/ {
+        root /usr/share/nginx/html;
+        index index.html;
+        # Hash routing: unknown asset paths stay 404 rather than falling back to HTML.
+        try_files $uri $uri/ =404;
+        location /app/assets/ {
+            root /usr/share/nginx/html;
+            add_header Cache-Control "public, max-age=31536000, immutable" always;
+            add_header X-Content-Type-Options nosniff always;
+            add_header Referrer-Policy no-referrer always;
+            add_header X-Frame-Options DENY always;
+        }
+        location = /app/index.html {
+            root /usr/share/nginx/html;
+            add_header Cache-Control "no-cache" always;
+            add_header X-Content-Type-Options nosniff always;
+            add_header Referrer-Policy no-referrer always;
+            add_header X-Frame-Options DENY always;
+        }
+    }
+
+    location / {
+        set $caseproof_api ${CASEPROOF_API_UPSTREAM};
+        proxy_pass http://$caseproof_api;
+        proxy_http_version 1.1;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_read_timeout 90s;
+        # The server-level security headers apply once, not duplicated from the API.
+        proxy_hide_header X-Content-Type-Options;
+        proxy_hide_header Referrer-Policy;
+        proxy_hide_header X-Frame-Options;
+    }
+}

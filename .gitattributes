@@ -1,0 +1,3 @@
+# Frozen evaluation evidence is hashed byte-for-byte. Windows worktrees must not
+# rewrite JSON/text fixture line endings and invalidate its published checksum.
+eval/corpora/** -text

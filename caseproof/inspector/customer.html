@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>CaseProof | Share complaint evidence</title>
+    <link rel="stylesheet" href="/inspector.css" />
+  </head>
+  <body class="customer-body">
+    <header class="customer-header">
+      <a class="brand" aria-label="CaseProof customer evidence"
+        ><span class="brand-mark" aria-hidden="true">C</span>CaseProof</a
+      ><span class="environment">Synthetic demo</span><a href="/report">Return to your complaints</a>
+    </header>
+    <main class="customer-page">
+      <section class="panel">
+        <div id="customer-intro">
+          <h1>Help us review your complaint</h1>
+          <p>
+            Share only the information requested by the fraud desk. You do not
+            need to sign in.
+          </p>
+          <div class="steps" aria-label="Your progress">
+            <span class="active">1. Check request</span
+            ><span class="active">2. Add evidence</span
+            ><span id="receipt-step">3. Confirmation</span>
+          </div>
+        </div>
+        <div id="request-section">
+          <h2>What we need from you</h2>
+          <p id="customer-request">Checking your private link…</p>
+          <p id="link-expiry" class="muted"></p>
+        </div>
+        <p class="reminder">
+          Report on 1930 / cybercrime.gov.in now; don't wait for this request
+        </p>
+        <form id="customer-form" hidden>
+          <h2 style="margin-top: 24px">Add evidence or a response</h2>
+          <p>
+            You can attach a receipt, chat screenshot or call log, or write a
+            response below.
+          </p>
+          <label
+            >Evidence type<select id="customer-kind">
+              <option value="receipt">Payment receipt</option>
+              <option value="messages">Chat screenshot</option>
+              <option value="call_log">Call log</option>
+              <option value="narrative">Written statement</option>
+            </select></label
+          >
+          <label
+            >Choose files<input
+              id="customer-file"
+              type="file"
+              accept="image/png,image/jpeg,text/plain"
+              multiple
+          /></label>
+          <p class="muted" id="file-help">
+            PNG, JPEG or UTF-8 text. Up to 5 MiB per file. A written response
+            also uses one evidence slot.
+          </p>
+          <ul id="file-list" class="upload-list" aria-live="polite"></ul>
+          <label
+            >Your response<textarea
+              id="customer-notes"
+              rows="5"
+              maxlength="10000"
+              placeholder="Explain what happened, or confirm the requested payment amount, date and time."
+              aria-describedby="response-help"
+            ></textarea>
+          </label>
+          <p id="response-help" class="muted">
+            If you cannot provide the information, explain why so the analyst
+            can review the gaps.
+          </p>
+          <label class="check-label"
+            ><input id="customer-unavailable" type="checkbox" />I cannot provide
+            this evidence</label
+          >
+          <p class="muted">
+            Never send an OTP, PIN, password or full card number.
+          </p>
+          <p id="customer-error" class="error-text" role="alert"></p>
+          <button id="customer-submit">Submit evidence and response</button>
+          <p class="muted">
+            Your response goes to the analyst for review. Submitting does not
+            confirm fraud or guarantee recovery.
+          </p>
+        </form>
+        <div id="customer-receipt" hidden>
+          <div class="success-mark" aria-hidden="true">✓</div>
+          <h2>Thank you. Your response is received.</h2>
+          <p>
+            Your evidence is queued for analysis. The analyst will review the
+            updated complaint.
+          </p>
+          <p>
+            This private link is now closed. You can close this tab. If more
+            information is needed, the fraud desk must share a new link.
+          </p>
+          <p class="muted">
+            This demo does not send a text message or provide a live
+            complaint-status page.
+          </p>
+        </div>
+        <p id="customer-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <script src="/customer.js"></script>
+  </body>
+</html>

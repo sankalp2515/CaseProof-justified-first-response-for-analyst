@@ -1,0 +1,39 @@
+{
+  "case_id": "CP014",
+  "family_id": "F04",
+  "scenario": "material_time_conflict",
+  "variant": 2,
+  "split": "dev",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP014-N",
+      "kind": "narrative",
+      "path": "fixtures/CP014/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP014-R",
+      "kind": "receipt",
+      "path": "fixtures/CP014/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP014-M",
+      "kind": "messages",
+      "path": "fixtures/CP014/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [
+    {
+      "artifact_id": "CP014-F",
+      "kind": "clarification",
+      "path": "fixtures/CP014/followup/clarification.txt",
+      "mime_type": "text/plain"
+    }
+  ],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

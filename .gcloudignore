@@ -1,0 +1,18 @@
+# Cloud Build source must not contain credentials or local evidence.
+.gcloudignore
+.git
+.venv
+.env
+.env.*
+var
+**/__pycache__
+**/.terraform
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+**/node_modules
+frontend/dist
+.hypothesis
+.mypy_cache
+.ruff_cache
+HANDOFF_LOCAL.md

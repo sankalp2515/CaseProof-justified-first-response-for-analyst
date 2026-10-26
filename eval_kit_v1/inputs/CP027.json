@@ -1,0 +1,39 @@
+{
+  "case_id": "CP027",
+  "family_id": "F07",
+  "scenario": "unreadable_receipt",
+  "variant": 3,
+  "split": "heldout",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP027-N",
+      "kind": "narrative",
+      "path": "fixtures/CP027/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP027-R",
+      "kind": "receipt",
+      "path": "fixtures/CP027/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP027-M",
+      "kind": "messages",
+      "path": "fixtures/CP027/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [
+    {
+      "artifact_id": "CP027-F",
+      "kind": "receipt",
+      "path": "fixtures/CP027/followup/receipt_complete.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

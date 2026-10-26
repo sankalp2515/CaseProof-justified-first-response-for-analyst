@@ -1,0 +1,18 @@
+.sample-evidence {
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid var(--brand-line);
+  border-radius: var(--r);
+  background: var(--brand-soft);
+  color: var(--ink-2);
+  font: 13px/1.65 var(--sans);
+}
+.sample-evidence h3 { margin: 0 0 8px; color: var(--ink); font-size: 15px; }
+.sample-evidence p { margin: 8px 0 14px; }
+.sample-evidence .muted { color: var(--ink-2); }
+.sample-evidence .checkbox-label { align-items: flex-start; }
+.sample-evidence .row { align-items: stretch; }
+@media (max-width: 480px) {
+  .sample-evidence { padding: 14px; }
+  .sample-evidence .btn { flex: 1 1 100%; justify-content: center; }
+}

@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-18",
+  "branch": "codex/landing-demo-journey",
+  "frontend_tests": 63,
+  "affected_backend_tests": 18,
+  "backend_warnings": [
+    "Starlette TestClient httpx deprecation"
+  ],
+  "build": "passed",
+  "ui_regressions": {
+    "checks": [
+      "574px case summary uses full width",
+      "574px stats occupy their own row",
+      "574px identity avatar is visible and aligned to selected role",
+      "574px page has no body overflow",
+      "mobile-overview automated accessibility",
+      "Requests explanation has explicit padding and vertical spacing",
+      "requests automated accessibility",
+      "Role switching does not recreate unread alerts",
+      "Role switching does not reopen golden-hour popup",
+      "Read state survives Cases/Queue scope changes and reload",
+      "Landing favicon resolves to actual SVG",
+      "Landing tour opens at introduction",
+      "Interrupted tour reopens at step one",
+      "Slow real response shows tour loader",
+      "Slow real response avoids premature missing-panel warning",
+      "390px tour footer remains inside viewport",
+      "574px tour footer remains inside viewport",
+      "1242px tour footer remains inside viewport",
+      "Idle observation does not republish bank feed every two minutes",
+      "No uncaught browser errors"
+    ],
+    "audits": [
+      {
+        "screen": "mobile-overview",
+        "violations": []
+      },
+      {
+        "screen": "requests",
+        "violations": []
+      }
+    ],
+    "errors": []
+  },
+  "guided_journey": {
+    "checks": [
+      "Search is a single aligned control at 1242",
+      "Identity caption and select share a left edge",
+      "Search is a single aligned control at 627",
+      "Search is a single aligned control at 390",
+      "Cases is an all-session history register, not duplicate KPIs",
+      "Tour keeps the landing destination",
+      "Tour 1 actions inside 668px viewport",
+      "Tour 2 actions inside 668px viewport",
+      "Tour cannot jump past incomplete intake",
+      "Tour footer accessible at 627x668",
+      "Tour footer accessible at 390x668",
+      "Tour footer accessible at 1242x400",
+      "Samer has compact bank-backed practice payee",
+      "Payment selector describes newest-first ordering",
+      "Tour 3 actions inside 668px viewport",
+      "After-payment contact time requires explicit confirmation",
+      "Tour 4 actions inside 668px viewport",
+      "Local provider explanation replaces disabled AI affordance",
+      "Tour 5 actions inside 668px viewport",
+      "Golden-hour case triggers reference-style alert on open analyst queue",
+      "Bank-selected alert amount is sourced before OCR",
+      "First contact does not replace the bank debit clock",
+      "Tour 6 actions inside 668px viewport",
+      "New realistic handle survives actual OCR and matching",
+      "Role distinction is visible without opening a separate guide",
+      "Tour 7 actions inside 668px viewport",
+      "Tour 8 actions inside 668px viewport",
+      "Tour 9 actions inside 668px viewport",
+      "Tour 10 actions inside 668px viewport",
+      "Analyst cannot approve the handoff",
+      "Tour 11 actions inside 668px viewport",
+      "Guided case reaches both actual simulator acknowledgements",
+      "Tour 12 actions inside 668px viewport",
+      "Tour Finish requires the actual completed handoff and ownership",
+      "Tour ends after real handoff without uncaught UI errors"
+    ],
+    "audits": [
+      {
+        "name": "case-register",
+        "violations": []
+      },
+      {
+        "name": "practice-evidence",
+        "violations": []
+      },
+      {
+        "name": "golden-hour-alert",
+        "violations": []
+      }
+    ],
+    "errors": [],
+    "caseId": "CASE-3e84c69f80717d52",
+    "providers": "Tesseract + local rules; samples bank-simulator",
+    "liveGoogle": false
+  },
+  "handoff_output": {
+    "caseId": "CASE-79f16b3fd0ae1ac8",
+    "packetId": "SYNTH-PACKET-5416fb29af4d9e43",
+    "revision": 14,
+    "checks": [
+      "Actual UI downloads the original approved handoff",
+      "Document includes the sourced money-trail paths",
+      "Both distinct receivers acknowledged this packet revision",
+      "Original handoff renders to an actual printable PDF"
+    ]
+  },
+  "provider_scope": {
+    "deployed_staging": "Document AI + Vertex AI Gemini; live journey recorded in docs/INTEGRATION_RESULTS.md; health checked read-only",
+    "this_local_regression": "Tesseract + local rules + independent worker and simulator receivers"
+  },
+  "deployment_changes": false,
+  "limitations": [
+    "Sampled axe checks are not accessibility certification",
+    "Initial repeated-flow run completed one complaint but timed out on the next receipt download under local load; retry is recorded separately",
+    "Freshness/clock events and actual new external observations can legitimately reprocess a case",
+    "Production performance/concurrency and unfamiliar evidence need further acceptance"
+  ],
+  "repeated_flow_retry": {
+    "result": "stopped_without_acceptance",
+    "reason": "No progress beyond initial entrance/readiness during optional additional run; completed guided journey and independent clarification journey are recorded separately."
+  }
+}

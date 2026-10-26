@@ -1,0 +1,32 @@
+{
+  "case_id": "CP002",
+  "family_id": "F01",
+  "scenario": "complete_impersonation",
+  "variant": 2,
+  "split": "dev",
+  "language": "English",
+  "synthetic": true,
+  "initial_artifacts": [
+    {
+      "artifact_id": "CP002-N",
+      "kind": "narrative",
+      "path": "fixtures/CP002/initial/narrative.txt",
+      "mime_type": "text/plain"
+    },
+    {
+      "artifact_id": "CP002-R",
+      "kind": "receipt",
+      "path": "fixtures/CP002/initial/receipt.png",
+      "mime_type": "image/png"
+    },
+    {
+      "artifact_id": "CP002-M",
+      "kind": "messages",
+      "path": "fixtures/CP002/initial/messages.png",
+      "mime_type": "image/png"
+    }
+  ],
+  "followup_artifacts": [],
+  "followup_access": "Only after accepted next request; never in initial model context",
+  "policy_version": "demo-policy-v1"
+}

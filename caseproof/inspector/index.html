@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CaseProof | Fraud case workspace</title>
+    <link rel="stylesheet" href="/inspector.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="app-header">
+      <a class="brand" href="#dashboard"
+        ><span class="brand-mark" aria-hidden="true">C</span>CaseProof</a
+      >
+      <span class="environment">Local demo · synthetic data</span>
+      <div class="toolbar">
+        <label class="role-label"
+          >Demo role
+          <select id="role">
+            <option value="analyst">Analyst</option>
+            <option value="reviewer">Reviewer</option>
+          </select></label
+        ><button id="refresh" class="secondary">Refresh</button>
+      </div>
+    </header>
+    <div class="shell">
+      <nav class="sidebar" aria-label="Main navigation">
+        <a class="navitem" href="#dashboard" id="dashboard-tab">Dashboard</a>
+        <a class="navitem" href="#cases" id="queue-tab"
+          >Cases <span id="case-count"></span
+        ></a>
+        <button id="new-case" class="navitem">Open complaint</button>
+        <a class="navitem" href="/report">Victim reporting portal</a>
+        <div class="sidebar-note">
+          <strong>Evidence. Clarity. Action.</strong>
+          <p>Local OCR observes.<br />Code checks.<br />People decide.</p>
+          <p>Demo roles are not production login.</p>
+        </div>
+      </nav>
+      <main id="main" tabindex="-1">
+        <div
+          id="status"
+          class="notice"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+        <section id="dashboard-page">
+          <div class="page-head">
+            <div>
+              <p class="breadcrumb">Workspace / Dashboard</p>
+              <h1>Cedar fraud desk</h1>
+              <p class="subtitle">
+                Know what needs attention. Take one clear next step.
+              </p>
+            </div>
+            <button id="demo-case">Try demo case</button>
+          </div>
+          <div class="start-strip">
+            <div>
+              <strong
+                >Complaints arrive from your bank’s reporting portal</strong
+              >
+              <p>
+                New victim submissions appear in this queue automatically. You
+                can also open an employee-assisted complaint.
+              </p>
+            </div>
+            <button id="start-complaint" class="secondary">
+              Open a complaint
+            </button>
+          </div>
+          <div
+            class="metrics"
+            id="metrics"
+            aria-label="Case summary"
+            aria-busy="true"
+          >
+            <p style="padding: 18px">Loading case summary…</p>
+          </div>
+          <div class="section-head">
+            <div>
+              <h2>Needs your attention</h2>
+              <p>
+                Active cases in the existing queue order. Processing and
+                customer replies update automatically.
+              </p>
+            </div>
+            <button id="browse-cases" class="secondary">Browse cases</button>
+          </div>
+          <div id="attention-list">
+            <p>Checking cases that need attention…</p>
+          </div>
+          <details class="panel">
+            <summary>How this local demo works</summary>
+            <p>
+              An employee opens the complaint. The customer adds evidence
+              through a private link. Local OCR and rules extract cited facts;
+              bank matching and tracing use simulated data. A reviewer approves
+              before simulated reports are sent.
+            </p>
+            <p>
+              The demo case includes ₹48,274 and ₹25,000 debits with a fixed
+              replay clock. No real SMS, bank report, freeze or refund is
+              performed.
+            </p>
+            <p id="runtime-note">Checking local services…</p>
+          </details>
+        </section>
+        <section id="cases-page" hidden>
+          <div class="page-head">
+            <div>
+              <p class="breadcrumb">Workspace / Cases</p>
+              <h1>Cases</h1>
+              <p class="subtitle">
+                Find a complaint and see what happens next.
+              </p>
+            </div>
+          </div>
+          <div class="filters">
+            <label
+              >Search cases<input
+                id="case-search"
+                type="search"
+                placeholder="Case ID or customer account" /></label
+            ><label
+              >Status<select id="case-filter">
+                <option value="all">All cases</option>
+                <option value="urgent">Within golden hour</option>
+                <option value="new">New</option>
+                <option value="processing">Processing</option>
+                <option value="awaiting_information">
+                  Waiting for customer
+                </option>
+                <option value="needs_attention">Needs attention</option>
+                <option value="ready_for_review">Ready for review</option>
+                <option value="approved">Approved</option>
+                <option value="completed">Reports delivered</option>
+                <option value="failed">Processing failed</option>
+              </select></label
+            >
+          </div>
+          <p id="list-count" class="muted"></p>
+          <div id="case-list"></div>
+        </section>
+        <section id="case-page" hidden>
+          <a class="back-link" href="#cases">Back to cases</a>
+          <div class="page-head">
+            <div>
+              <p class="breadcrumb">Cases / Investigation</p>
+              <h1 id="case-name">Complaint</h1>
+              <p id="case-id" class="muted"></p>
+            </div>
+            <div class="case-state">
+              <span id="case-status" class="state"></span
+              ><span id="clock-left"></span><small id="clock-note"></small>
+            </div>
+          </div>
+          <ol
+            class="progress"
+            id="workflow-progress"
+            aria-label="Case workflow"
+          ></ol>
+          <div id="next-step" class="next-step"></div>
+          <div class="case-tabs" role="tablist" aria-label="Case sections">
+            <button role="tab" data-tab="overview" aria-selected="true">
+              Overview
+            </button>
+            <button role="tab" data-tab="evidence">Evidence</button>
+            <button role="tab" data-tab="verification">
+              Transactions & trail
+            </button>
+            <button role="tab" data-tab="review">Review & decision</button>
+            <button role="tab" data-tab="activity">Activity</button>
+          </div>
+          <section
+            id="tab-overview"
+            class="tab-panel"
+            role="tabpanel"
+            aria-label="Overview"
+          >
+            <section class="panel" aria-labelledby="brief-title">
+              <h2 id="brief-title">Investigation brief</h2>
+              <p id="brief-summary"></p>
+              <p id="provider-mode" class="muted"></p>
+              <div id="brief-content"></div>
+              <a id="brief-download" target="_blank" rel="noopener"
+                >Open readable brief</a
+              >
+            </section>
+          <section class="panel" id="urgent-panel" hidden>
+            <h2>Urgent referral</h2>
+            <p id="urgent-note"></p>
+            <label
+              >Reason for this action<input
+                id="urgent-reason"
+                maxlength="2000"
+                placeholder="Explain the transaction facts you reviewed"
+            /></label>
+            <button id="urgent-approve">
+              Approve urgent simulated referral
+            </button>
+            <div id="urgent-history"></div>
+            <h3>Reports already delivered</h3>
+            <div id="report-history"></div>
+            <p class="muted">
+              Separate from the complete case packet. Receipt acknowledgement
+              does not mean funds were held or recovered.
+            </p>
+          </section>
+            <div id="case-overview" class="overview-grid"></div>
+            <section class="panel" id="followup-panel">
+              <h2>Owner and next action</h2>
+              <p id="followup-state"></p>
+              <label
+                >Assigned owner<input id="followup-owner" maxlength="120"
+              /></label>
+              <label
+                >Next action<textarea
+                  id="followup-action"
+                  maxlength="1000"
+                ></textarea>
+              </label>
+              <label
+                >Due (local time, optional)<input
+                  id="followup-due"
+                  type="datetime-local"
+              /></label>
+              <label
+                >Reason for assignment<input
+                  id="followup-reason"
+                  maxlength="1000"
+              /></label>
+              <button id="followup-save" data-analyst-action="true">
+                Save follow-up
+              </button>
+              <p class="muted">
+                Delivery acknowledgement is not recovery or investigation
+                closure.
+              </p>
+            </section>
+            <div class="two-col">
+              <section class="panel">
+                <h2>Missing information</h2>
+                <p id="missing-note"></p>
+                <div id="requests"></div>
+                <details>
+                  <summary>Other requests and why they were skipped</summary>
+                  <div id="skipped"></div>
+                </details>
+              </section>
+              <section class="panel">
+                <h2>Customer evidence link</h2>
+                <p>
+                  Give the customer a private link to add evidence. No message
+                  is sent automatically.
+                </p>
+                <button id="upload-link" class="secondary">
+                  Create customer upload link
+                </button>
+                <div id="customer-link-box" hidden>
+                  <a
+                    id="customer-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open customer link</a
+                  >
+                  <p class="muted">
+                    Copy this link to the customer. It expires in one hour and
+                    closes after submission.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section
+            id="tab-evidence"
+            class="tab-panel"
+            role="tabpanel"
+            aria-label="Evidence"
+            hidden
+          >
+            <div class="two-col evidence-layout">
+              <section class="panel evidence">
+                <h2>Original evidence</h2>
+                <label>Choose evidence<select id="artifacts"></select></label>
+                <p id="source-note" class="muted"></p>
+                <div class="image-scroll">
+                  <div id="canvas">
+                    <img
+                      id="evidence-image"
+                      alt="Customer-submitted evidence"
+                    />
+                    <div id="boxes"></div>
+                  </div>
+                </div>
+                <pre id="evidence-text"></pre>
+                <p id="segment-text"></p>
+              </section>
+              <section class="panel">
+                <h2>Facts with sources</h2>
+                <p>
+                  Choose a source to compare a fact with the original.
+                  “Reported” means it has not been verified.
+                </p>
+                <p id="fact-count" class="muted"></p>
+                <div id="facts"></div>
+              </section>
+            </div>
+          </section>
+          <section
+            id="tab-verification"
+            class="tab-panel"
+            role="tabpanel"
+            aria-label="Transactions and trail"
+            hidden
+          >
+            <section class="panel">
+              <h2>Transaction verification</h2>
+              <p id="bank-note"></p>
+              <div id="bank-gap-actions" hidden>
+                <p class="muted">
+                  Bank data must come from the bank-side import. If it cannot be
+                  obtained, record an internal reason for escalation. This does
+                  not verify the payment.
+                </p>
+                <label for="bank-gap-reason"
+                  >Why bank verification is unavailable</label
+                >
+                <textarea
+                  id="bank-gap-reason"
+                  rows="3"
+                  maxlength="2000"
+                ></textarea>
+                <button id="bank-gap-unavailable" class="secondary">
+                  Record unavailable bank data
+                </button>
+              </div>
+              <div id="ledger"></div>
+              <div id="unreported"></div>
+              <p id="linked" class="muted"></p>
+            </section>
+            <section class="panel">
+              <h2>Money trail</h2>
+              <p id="recoverable" class="recoverable"></p>
+              <p id="trail-totals"></p>
+              <p class="muted">
+                An estimate based on supplied bank observations. These funds
+                have not been frozen or refunded.
+              </p>
+              <div id="positions"></div>
+              <div class="graph-scroll">
+                <svg
+                  id="trail-svg"
+                  viewBox="0 0 600 350"
+                  role="img"
+                  aria-label="Known money movements"
+                ></svg>
+              </div>
+              <details>
+                <summary>Bank observations and transaction sources</summary>
+                <div id="trail-sources"></div>
+              </details>
+            </section>
+          </section>
+          <section
+            id="tab-review"
+            class="tab-panel"
+            role="tabpanel"
+            aria-label="Review and decision"
+            hidden
+          >
+            <div class="two-col">
+              <section class="panel">
+                <h2>Review this case</h2>
+                <span id="readiness" class="state"></span>
+                <p id="review-note"></p>
+                <ul id="requirements"></ul>
+                <label
+                  >Review reason<textarea
+                    id="reason"
+                    rows="3"
+                    placeholder="Explain which evidence and transactions you checked."
+                  ></textarea>
+                </label>
+                <div class="actions">
+                  <button id="approve">Approve case</button
+                  ><button id="export" class="secondary">
+                    Send simulated reports
+                  </button>
+                </div>
+                <p id="decision-help" class="muted"></p>
+                <div id="delivery-result"></div>
+              </section>
+              <section class="panel">
+                <h2>Handoff summary</h2>
+                <div id="handoff-summary"></div>
+                <p>
+                  Two simulated destinations: CFCFRMS report update and bank
+                  case packet. Both need approval for the current revision.
+                </p>
+                <details>
+                  <summary>Technical report preview</summary>
+                  <pre id="preview"></pre>
+                </details>
+              </section>
+            </div>
+          </section>
+          <section
+            id="tab-activity"
+            class="tab-panel"
+            role="tabpanel"
+            aria-label="Activity"
+            hidden
+          >
+            <section class="panel">
+              <h2>Case activity</h2>
+              <p>Recorded events from the local case store.</p>
+              <ol id="activity" class="timeline"></ol>
+              <button id="diff" class="secondary">Show revision changes</button>
+              <div id="change-summary"></div>
+              <details id="diff-details" hidden>
+                <summary>Technical revision comparison</summary>
+                <pre id="diff-result" hidden></pre>
+              </details>
+            </section>
+            <details class="panel">
+              <summary>Technical details</summary>
+              <p id="revision" class="digest"></p>
+              <h3>Processing runs</h3>
+              <pre id="runs"></pre>
+              <h3>Raw claims</h3>
+              <pre id="raw-claims"></pre>
+            </details>
+          </section>
+        </section>
+      </main>
+    </div>
+    <dialog id="create-dialog" aria-labelledby="create-title">
+      <form id="create-form">
+        <div class="dialog-head">
+          <h2 id="create-title">Open a complaint</h2>
+          <button
+            type="button"
+            class="icon-button"
+            data-close="create-dialog"
+            aria-label="Close complaint form"
+          >
+            ×
+          </button>
+        </div>
+        <p>
+          This employee-assisted flow creates a case and then a private customer
+          evidence link.
+        </p>
+        <label
+          >Customer account<input
+            id="create-account"
+            required
+            maxlength="150"
+            placeholder="Use a synthetic account for this local demo" /></label
+        ><label
+          >Reported at (local time)<input
+            id="create-reported"
+            type="datetime-local"
+            required /></label
+        ><label
+          >First contact (local time)<input
+            id="create-contact"
+            type="datetime-local"
+            required
+        /></label>
+        <p id="create-error" class="error-text" role="alert"></p>
+        <button id="create-submit">Create complaint</button>
+      </form>
+    </dialog>
+    <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+      <h2 id="confirm-title"></h2>
+      <p id="confirm-text"></p>
+      <div class="actions">
+        <button id="confirm-action"></button
+        ><button class="secondary" data-close="confirm-dialog">Cancel</button>
+      </div>
+    </dialog>
+    <script src="/inspector.js"></script>
+  </body>
+</html>

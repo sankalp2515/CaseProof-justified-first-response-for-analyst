@@ -1,0 +1,46 @@
+# Manual build/test/push only. No deploy step and no deployment trigger.
+substitutions:
+  _REGION: asia-south1
+  # practice: demo personas confined to each practice session; google: staff sign-in
+  # with the OAuth web client ID in _STAFF_CLIENT_ID (the API's STAFF_AUDIENCE).
+  _STAFF_ACCESS: practice
+  _STAFF_CLIENT_ID: ''
+
+serviceAccount: projects/$PROJECT_ID/serviceAccounts/caseproof-build@$PROJECT_ID.iam.gserviceaccount.com
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: [build, -t, 'caseproof-regression:$BUILD_ID', .]
+  - name: gcr.io/cloud-builders/docker
+    args: [run, --rm, --network, none, -e, DATA_DIR=/tmp/tests, -e, SQLITE_URL=sqlite:////tmp/tests/cases.db,
+           -e, DUCKDB_PATH=/tmp/tests/bank.duckdb, -e, OBJECT_DIR=/tmp/tests/objects,
+           -e, LLM_PROVIDER=gemini, -e, LLM_MODE=live, -e, CUSTOMER_PORTAL=false,
+           'caseproof-regression:$BUILD_ID',
+           python, -m, pytest, -q, --basetemp=/tmp/pytest, -o, cache_dir=/tmp/pytest-cache]
+  - name: gcr.io/cloud-builders/docker
+    args: [build, -f, Dockerfile.cloud, -t, '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/backend:$BUILD_ID', .]
+  - name: gcr.io/cloud-builders/docker
+    args: [run, --rm, --network, none, -v, '/workspace/tests:/app/tests:ro',
+           -e, DATA_DIR=/tmp/tests, -e, SQLITE_URL=sqlite:////tmp/tests/cases.db,
+           -e, DUCKDB_PATH=/tmp/tests/bank.duckdb, -e, OBJECT_DIR=/tmp/tests/objects,
+           -e, LLM_PROVIDER=gemini, -e, LLM_MODE=live, -e, CUSTOMER_PORTAL=false,
+           '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/backend:$BUILD_ID',
+           python, -m, pytest, -q, tests/flow/test_google_backend_contract.py,
+           tests/unit/test_cloud_http_security.py, tests/unit/test_cloud_upload_security.py,
+           --basetemp=/tmp/pytest, -o, cache_dir=/tmp/pytest-cache]
+  - name: gcr.io/cloud-builders/docker
+    args: [build, -f, Dockerfile.scanner, -t, '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/scanner:$BUILD_ID', .]
+  - name: gcr.io/cloud-builders/docker
+    args: [run, --rm, --network, none, '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/scanner:$BUILD_ID',
+           python, check_scanner.py]
+  - name: gcr.io/cloud-builders/docker
+    dir: frontend
+    args: [build, --build-arg, FRONTEND_PROFILE=cloud, --build-arg, 'STAFF_ACCESS=${_STAFF_ACCESS}',
+           --build-arg, 'VITE_GOOGLE_CLIENT_ID=${_STAFF_CLIENT_ID}',
+           -t, '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/frontend:$BUILD_ID', .]
+images:
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/backend:$BUILD_ID'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/scanner:$BUILD_ID'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/caseproof/frontend:$BUILD_ID'
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1800s

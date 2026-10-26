@@ -1,0 +1,37 @@
+{
+  "version": "demo-policy-v1",
+  "authority": "Team authored demonstration policy, not a bank or government SOP",
+  "required_facts": [
+    "amount",
+    "date",
+    "transaction_reference",
+    "deception_account"
+  ],
+  "caller_identity_required": false,
+  "complete_requires_no_critical_conflict": true,
+  "unavailable_required_fact": "ESCALATE_CANDIDATE only with explicit reviewer reason",
+  "request_catalogue": [
+    "request_transaction_receipt",
+    "request_reference_crop",
+    "clarify_transaction_time",
+    "clarify_amount",
+    "confirm_transaction_reference",
+    "request_readable_receipt"
+  ],
+  "blocked": [
+    "OTP",
+    "PIN",
+    "password",
+    "full_device_access",
+    "full_chat_history",
+    "irrelevant_national_ID"
+  ],
+  "score": {
+    "relevance": 3,
+    "contradiction": 2,
+    "urgency": 1,
+    "availability": 1,
+    "effort": -2,
+    "privacy": -3
+  }
+}

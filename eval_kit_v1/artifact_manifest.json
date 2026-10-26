@@ -1,0 +1,862 @@
+[
+  {
+    "path": "fixtures/CP001/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP001/initial/narrative.txt",
+    "sha256": "addb2431920bc6ccd5414dc34cfacdc91efb7276347228eb1a03e41874d0f980",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP001/initial/receipt.png",
+    "sha256": "b40a02c1da0a8d02470dcf43ae20920acd1cbbd06f85dca7cc547399286c79fa",
+    "bytes": 52536
+  },
+  {
+    "path": "fixtures/CP002/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP002/initial/narrative.txt",
+    "sha256": "3b19fba1dba4a57fe8e8e4f7c7d64ef1cd2124af873925094d96f7f600dc21ca",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP002/initial/receipt.png",
+    "sha256": "2542eec7e5e6b27e418a02357aea00033a4636a9efa26d36b373ae99d42723c6",
+    "bytes": 52798
+  },
+  {
+    "path": "fixtures/CP003/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP003/initial/narrative.txt",
+    "sha256": "baeae616af4418170a87cf114e4743092b8d99544802389970293f7a13b772fc",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP003/initial/receipt.png",
+    "sha256": "5dd63290d7f3f5e59b7903f1d97562f0ec9516e6a8dfc9265c585025e60ba5d5",
+    "bytes": 53123
+  },
+  {
+    "path": "fixtures/CP004/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP004/initial/narrative.txt",
+    "sha256": "3d0c225d4149b6955598d1957fad4ae518404410d00a8ae9c2772d083e1dcc27",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP004/initial/receipt.png",
+    "sha256": "895106611fb3d52fe6651156082aa85179b378dc72adf3a62429b7336cd78465",
+    "bytes": 52320
+  },
+  {
+    "path": "fixtures/CP005/followup/receipt_complete.png",
+    "sha256": "745ffbae50c436c4a29c9d74ccf8fdb93b5f899c5106bf8a7ceb23fbbb420ec3",
+    "bytes": 36204
+  },
+  {
+    "path": "fixtures/CP005/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP005/initial/narrative.txt",
+    "sha256": "2abed30f7650b8c387b4c0a860f8a78e3efac54a419c1d16087c7938b9705f47",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP006/followup/receipt_complete.png",
+    "sha256": "ec5da855e17d6ff38516bc1d3b649db826241bb24f70d58e73ea4c31397c84bc",
+    "bytes": 36001
+  },
+  {
+    "path": "fixtures/CP006/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP006/initial/narrative.txt",
+    "sha256": "078611450d4b11b802ac52fe95798b9734396f460f0fa5f38f9713115d47f133",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP007/followup/receipt_complete.png",
+    "sha256": "f7f42b099f1498163f1a72a237527a01624a3e2bd3ce86f8c3adb962d6df62be",
+    "bytes": 36432
+  },
+  {
+    "path": "fixtures/CP007/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP007/initial/narrative.txt",
+    "sha256": "a1983cbb0e90db48e4920868560d5b7423e4365cf6eee1d2b1834065967c49e3",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP008/followup/receipt_complete.png",
+    "sha256": "799f7d3007dcb9b352f07c802fc1f69107fb7401cad2ef53fe7ebb55ad317035",
+    "bytes": 36749
+  },
+  {
+    "path": "fixtures/CP008/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP008/initial/narrative.txt",
+    "sha256": "8fbe4a7684e984afab0c79103f787c0cda9859c0a5d648d559a402d0b2159d95",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP009/followup/receipt_complete.png",
+    "sha256": "e7851db05cf9de2223c698b758f56642b80cad61ce0aa667856c4955bd5be56b",
+    "bytes": 36140
+  },
+  {
+    "path": "fixtures/CP009/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP009/initial/narrative.txt",
+    "sha256": "e61efd3972ccab0d6e832e81b882ca93dbfc07d0f310435d5c841323b80c0231",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP009/initial/receipt.png",
+    "sha256": "f9b73d694f7c7c7c552b4953fcf1ca0113f77572f1644535ec1c450c7bc3e5bf",
+    "bytes": 54311
+  },
+  {
+    "path": "fixtures/CP010/followup/receipt_complete.png",
+    "sha256": "74a90a2ad22642cb1ba2be979bd457da5480d0e222d8a6cf1b3bf52584c38555",
+    "bytes": 35892
+  },
+  {
+    "path": "fixtures/CP010/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP010/initial/narrative.txt",
+    "sha256": "95cc37be92629de35f96514f730db7a7e22d63f0565560aece4693f14b1b1f57",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP010/initial/receipt.png",
+    "sha256": "754a05c58a39f978cbfde90529c9a541aa57a6737b1c13869d2199c5cd1132fe",
+    "bytes": 53972
+  },
+  {
+    "path": "fixtures/CP011/followup/receipt_complete.png",
+    "sha256": "9cf25281379a4f0aca99a368310faceba9dea2de49f81bc8930552b09ead51d6",
+    "bytes": 36182
+  },
+  {
+    "path": "fixtures/CP011/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP011/initial/narrative.txt",
+    "sha256": "6b21a6048e203e0d5d347cef3ef78b874482d4f7ffc632b000baf1e48038b895",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP011/initial/receipt.png",
+    "sha256": "b5895aa0378c47ad8723e9f1a82b0f3568e8af67c62b0527afda9267867d296f",
+    "bytes": 54137
+  },
+  {
+    "path": "fixtures/CP012/followup/receipt_complete.png",
+    "sha256": "9b5f8a685c836f6495010a4c6f402194979f60cdd0bdbd5342684a0c94043132",
+    "bytes": 36343
+  },
+  {
+    "path": "fixtures/CP012/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP012/initial/narrative.txt",
+    "sha256": "2346da6d727022f353c73156d14dc03c0b66c930adb1fb447c2d6ce27644219f",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP012/initial/receipt.png",
+    "sha256": "68bb2429d202501ca0f6d9c9bb5653a7738440da02fbefd5613c85cdd9537b74",
+    "bytes": 53240
+  },
+  {
+    "path": "fixtures/CP013/followup/clarification.txt",
+    "sha256": "a65d6ccb7d089ea33e8f314190c74bb355021cac339e40f456888e633764c13f",
+    "bytes": 74
+  },
+  {
+    "path": "fixtures/CP013/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP013/initial/narrative.txt",
+    "sha256": "302c75d8046f27af0418946e01638635d00232934adf9d7a50460422e8b51c5e",
+    "bytes": 290
+  },
+  {
+    "path": "fixtures/CP013/initial/receipt.png",
+    "sha256": "2e7efdd0f8c91c4fe42b9ed4389574cc2c6a5b9a37575e36b2580331b4a60dff",
+    "bytes": 52714
+  },
+  {
+    "path": "fixtures/CP014/followup/clarification.txt",
+    "sha256": "a65d6ccb7d089ea33e8f314190c74bb355021cac339e40f456888e633764c13f",
+    "bytes": 74
+  },
+  {
+    "path": "fixtures/CP014/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP014/initial/narrative.txt",
+    "sha256": "d90288f07c6e44cdc6cf4ab3513f9e4e1f3072de023091211e2e2979976319b8",
+    "bytes": 289
+  },
+  {
+    "path": "fixtures/CP014/initial/receipt.png",
+    "sha256": "0ac84baca7534c0d16b3f15dafdb6e80261ce965492fb611fca9b8cb0a8b3d43",
+    "bytes": 52149
+  },
+  {
+    "path": "fixtures/CP015/followup/clarification.txt",
+    "sha256": "a65d6ccb7d089ea33e8f314190c74bb355021cac339e40f456888e633764c13f",
+    "bytes": 74
+  },
+  {
+    "path": "fixtures/CP015/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP015/initial/narrative.txt",
+    "sha256": "bce538ba39bb398c0dad2636fc445f1d6ec158dd209b3c0cbb313bc38f9c77dd",
+    "bytes": 288
+  },
+  {
+    "path": "fixtures/CP015/initial/receipt.png",
+    "sha256": "892478e1d1d6dbf734fbd5ec6971fd9b6e9de8aa78764ce9479bfbd85c4269e7",
+    "bytes": 52534
+  },
+  {
+    "path": "fixtures/CP016/followup/clarification.txt",
+    "sha256": "a65d6ccb7d089ea33e8f314190c74bb355021cac339e40f456888e633764c13f",
+    "bytes": 74
+  },
+  {
+    "path": "fixtures/CP016/initial/messages.png",
+    "sha256": "f48c82642a7d81263457fde0e8698133b26a9d3fc20599816fec3b12d0a7ac48",
+    "bytes": 46930
+  },
+  {
+    "path": "fixtures/CP016/initial/narrative.txt",
+    "sha256": "705d149589ef6839a7106c720274815cea5f2292cc53a789b6952bfe24e7b805",
+    "bytes": 287
+  },
+  {
+    "path": "fixtures/CP016/initial/receipt.png",
+    "sha256": "616886a16c2f2019921e627c2edd679da2621711c7f9a32d4f7d727d8fe68745",
+    "bytes": 52520
+  },
+  {
+    "path": "fixtures/CP017/followup/clarification.txt",
+    "sha256": "e3154653580ed307e9312f808c2c77c39bd747e5aeac1ec88c9c63aec4545dd9",
+    "bytes": 69
+  },
+  {
+    "path": "fixtures/CP017/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP017/initial/narrative.txt",
+    "sha256": "ca03a41dd8df7ef664f4d0756b25c11ce7e45746cadd23c335ac65e89efa3631",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP017/initial/receipt.png",
+    "sha256": "cc442711c0fdb276dd8fb9b5d2ba89eb662b2255f29c729a6dba9137c75f8d6a",
+    "bytes": 52826
+  },
+  {
+    "path": "fixtures/CP018/followup/clarification.txt",
+    "sha256": "95c3773991fdc606fb1eca0cd5b37cc0b62020c678d1c61bcea68d241fe02787",
+    "bytes": 69
+  },
+  {
+    "path": "fixtures/CP018/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP018/initial/narrative.txt",
+    "sha256": "60c2cb3e99966d21ea32e48b950b326861859a63853f04b7c4b00d9872373a8d",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP018/initial/receipt.png",
+    "sha256": "be50a1e1098000d49706d2feb359da5c7f69523c96a63e0d5f77537fee744d44",
+    "bytes": 53482
+  },
+  {
+    "path": "fixtures/CP019/followup/clarification.txt",
+    "sha256": "12c81030bf10240ec1da764b3c8538003d6b464a4aff7c2a05aa9223e001bdcb",
+    "bytes": 68
+  },
+  {
+    "path": "fixtures/CP019/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP019/initial/narrative.txt",
+    "sha256": "8749bc07edf151a537ae79b8684077734ebb3b88864b1757c6e14f9257d01ada",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP019/initial/receipt.png",
+    "sha256": "9c40736ca84585285d99a5b398c62f72e03e822009f748d38eec3240d82d761d",
+    "bytes": 52532
+  },
+  {
+    "path": "fixtures/CP020/followup/clarification.txt",
+    "sha256": "7d6f87d8f8d625d61dadc171309acc9bc7186f90d79806c5534fb2999bffffeb",
+    "bytes": 69
+  },
+  {
+    "path": "fixtures/CP020/initial/messages.png",
+    "sha256": "f48c82642a7d81263457fde0e8698133b26a9d3fc20599816fec3b12d0a7ac48",
+    "bytes": 46930
+  },
+  {
+    "path": "fixtures/CP020/initial/narrative.txt",
+    "sha256": "7043288587ed096eec75a84d41176a67bec1e40b5d6a8f01cacabb2c4166f5cf",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP020/initial/receipt.png",
+    "sha256": "7e82cc52b61f67cda195dd2f7f8065854d86b12986de267e561fafd501b174fe",
+    "bytes": 52916
+  },
+  {
+    "path": "fixtures/CP021/followup/clarification.txt",
+    "sha256": "71ecb3454c26d84f0230154e485e4f8c2f8b925773508eb13f1bb630fdfaeec0",
+    "bytes": 135
+  },
+  {
+    "path": "fixtures/CP021/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP021/initial/mock_bank_record.txt",
+    "sha256": "c7dcaf789e40b85ef9d298a07bfd63fd8eadd008dab0eadb9f9e33b4a5881b95",
+    "bytes": 199
+  },
+  {
+    "path": "fixtures/CP021/initial/narrative.txt",
+    "sha256": "7e8e21d94b1cdd00d31bfb685f4cc6716cbdf9f23a60883350e9c1ee9f1c730f",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP021/initial/receipt.png",
+    "sha256": "a7e2e0b37e0bb7bf0aa3d0c72d0ee2f2b810e2f8dbae4e446d2f6c2c23eb1e15",
+    "bytes": 55042
+  },
+  {
+    "path": "fixtures/CP022/followup/clarification.txt",
+    "sha256": "552180bdae43eec52411136b29e1b8c39b0cae81975e70451becdf5ec766268a",
+    "bytes": 135
+  },
+  {
+    "path": "fixtures/CP022/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP022/initial/mock_bank_record.txt",
+    "sha256": "00ec15eb71377e5a67b78c11c8bfda1837eeb19e65f8ff723d64eb0149ce4013",
+    "bytes": 198
+  },
+  {
+    "path": "fixtures/CP022/initial/narrative.txt",
+    "sha256": "ad4e95d429a41a0b2abdf88321f5894fdfb4d4cf10d56904169fe2c0c84fadde",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP022/initial/receipt.png",
+    "sha256": "27a1359702846b5d3b9ebb8bfe5bd9158f4840bcf4343425b5440d47148ff176",
+    "bytes": 53885
+  },
+  {
+    "path": "fixtures/CP023/followup/clarification.txt",
+    "sha256": "d34b418d14d5502b6ebe7284ee4c62afcb41e56e4fafba79524997a23cd32bca",
+    "bytes": 135
+  },
+  {
+    "path": "fixtures/CP023/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP023/initial/mock_bank_record.txt",
+    "sha256": "c3891582be69f9705cbf52e18ace113a3b05d86223a4890032f88b064682469a",
+    "bytes": 197
+  },
+  {
+    "path": "fixtures/CP023/initial/narrative.txt",
+    "sha256": "d48a7c40bdba3a19b80c6523a4e0d2d6baaddc28ed4691c3f6dba3774d3cdf66",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP023/initial/receipt.png",
+    "sha256": "0e952add4963799d0387a977d51f71eeab6e6ef1dace54a1e8137d019e939e20",
+    "bytes": 55069
+  },
+  {
+    "path": "fixtures/CP024/followup/clarification.txt",
+    "sha256": "9851f66a674e7dc0da4873425a4e7ac5ddc21fae5cb498f37df3683f3542e282",
+    "bytes": 135
+  },
+  {
+    "path": "fixtures/CP024/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP024/initial/mock_bank_record.txt",
+    "sha256": "c63142f98c3d1a054994e3ed47ce4f07063232c2251b5d41c66de54129943908",
+    "bytes": 196
+  },
+  {
+    "path": "fixtures/CP024/initial/narrative.txt",
+    "sha256": "75f89506519e38651ac4258088fb4153659e1b22d59245f0b61d62a9a7aa8a81",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP024/initial/receipt.png",
+    "sha256": "31b6113d56990b2cc2468ce3cea3a298f421e36192906687c72447df86e4ad29",
+    "bytes": 54481
+  },
+  {
+    "path": "fixtures/CP025/followup/receipt_complete.png",
+    "sha256": "30e3345a6b9c44c6e453a4ce8a0851bdb3507fba7848936c0e99f491cab52490",
+    "bytes": 36186
+  },
+  {
+    "path": "fixtures/CP025/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP025/initial/narrative.txt",
+    "sha256": "56b35fc09984025b966ddff99976c3cf36d939a81f788e1bdae51286c358492f",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP025/initial/receipt.png",
+    "sha256": "b398d43c1e30670f9421a47339c979f731adb714a57c8300670f682c514e9fee",
+    "bytes": 104745
+  },
+  {
+    "path": "fixtures/CP026/followup/receipt_complete.png",
+    "sha256": "70274bea8ff994b3431f425e0b52e382273b7f99beba50788ba8a2d04df33b23",
+    "bytes": 36883
+  },
+  {
+    "path": "fixtures/CP026/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP026/initial/narrative.txt",
+    "sha256": "5f31e5c1300cb9803611315de2f1828543d351a0e9d39b1de6a09768ef135163",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP026/initial/receipt.png",
+    "sha256": "48dff8ed21d48c74646a515cedb754d0d3c811929e7b1839f5b83061eca455b2",
+    "bytes": 105116
+  },
+  {
+    "path": "fixtures/CP027/followup/receipt_complete.png",
+    "sha256": "c4be142125364ee4abe27bedacbd54fd8a2b8c44b4c22c2d52076bb43bc41ae1",
+    "bytes": 36302
+  },
+  {
+    "path": "fixtures/CP027/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP027/initial/narrative.txt",
+    "sha256": "ce9d684e7af68402c808204a8486f04f56434fd4188fe6e3ce5ca9b2ff2df713",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP027/initial/receipt.png",
+    "sha256": "a0f6149e2144bb9eb079534ac821eac2bd0788d092170b8f81057de678dadcf8",
+    "bytes": 104809
+  },
+  {
+    "path": "fixtures/CP028/followup/receipt_complete.png",
+    "sha256": "ff1aca988df869c306ede64041d1ded7e72d98793d4034e2f428e0a2c5257a77",
+    "bytes": 36850
+  },
+  {
+    "path": "fixtures/CP028/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP028/initial/narrative.txt",
+    "sha256": "7478ade596dbf5a9deb989bab08fd2c1da0b1b5e5c6fedec09e6dd23839b9876",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP028/initial/receipt.png",
+    "sha256": "4e1497d5eb60465287fa6d1921fe8db256af96e422e221400579677f8a0b59bb",
+    "bytes": 104156
+  },
+  {
+    "path": "fixtures/CP029/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP029/initial/narrative.txt",
+    "sha256": "3863455ebb3de413162837ae37ea074859f8e0857c434adf29015984bb58b16e",
+    "bytes": 394
+  },
+  {
+    "path": "fixtures/CP030/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP030/initial/narrative.txt",
+    "sha256": "757531d88e414474b5361984f4654772d11c1c57cdeb4b42a2e4a9213e0a3eb0",
+    "bytes": 393
+  },
+  {
+    "path": "fixtures/CP031/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP031/initial/narrative.txt",
+    "sha256": "2b63610803bbaaa31ff6ebd28809397628878df069535a73820261c240e627ea",
+    "bytes": 392
+  },
+  {
+    "path": "fixtures/CP032/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP032/initial/narrative.txt",
+    "sha256": "a6c73836fdb2b8c93221bf331dcf3cd3124e685a0ec1b000c95bc0ffba2e0f70",
+    "bytes": 391
+  },
+  {
+    "path": "fixtures/CP033/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP033/initial/messages_duplicate.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP033/initial/narrative.txt",
+    "sha256": "07b557ca8d2ffde2afc114d61383b2c59708391d5937c2501c683df663c2ef98",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP033/initial/receipt.png",
+    "sha256": "96d631ec5f8b41d0727b6d87e4ec68f7f5f26488b0c8912b069e5d2c1c3f7f22",
+    "bytes": 53579
+  },
+  {
+    "path": "fixtures/CP034/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP034/initial/messages_duplicate.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP034/initial/narrative.txt",
+    "sha256": "a75b26089aeca4746a2eddf990d6148aa2e4f6a311958c739c3d1928cf9d1fe4",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP034/initial/receipt.png",
+    "sha256": "e11ced87901fd10135477b409de9f3a5fa462ea33ef0162f1a98d10618fbaff6",
+    "bytes": 53429
+  },
+  {
+    "path": "fixtures/CP035/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP035/initial/messages_duplicate.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP035/initial/narrative.txt",
+    "sha256": "34b050371498319096e5809139958b242bb5532a3a0f48834d08b3b1cba4dc0e",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP035/initial/receipt.png",
+    "sha256": "10557d195d87e26e743cd656e23fdc7dbe1ce21c965556d2b76dfad0cc64d1fb",
+    "bytes": 53680
+  },
+  {
+    "path": "fixtures/CP036/initial/messages.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP036/initial/messages_duplicate.png",
+    "sha256": "5082881da5e30b99a9a71b56d75b219ea135364fe719cf4348eefa96c915cd78",
+    "bytes": 48376
+  },
+  {
+    "path": "fixtures/CP036/initial/narrative.txt",
+    "sha256": "f4b0060e27e9f40eea5301df4f75c5e1c66cff79747a65d5790fada3ed22f7b3",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP036/initial/receipt.png",
+    "sha256": "5c0a197019372ca013cbba6d0e6ebd41d1fc6b51cffcb470b6d664d79494aa1e",
+    "bytes": 53431
+  },
+  {
+    "path": "fixtures/CP037/followup/receipt_complete.png",
+    "sha256": "78d0b4ab94a9d4914989e4f6a374bb5330bcb8bd6350ae55e3ff4ef11234c48f",
+    "bytes": 36587
+  },
+  {
+    "path": "fixtures/CP037/initial/messages.png",
+    "sha256": "acd5fb07dd72a7cb965542891fbf9de4716a035d70669011238236fca36a028c",
+    "bytes": 59321
+  },
+  {
+    "path": "fixtures/CP037/initial/narrative.txt",
+    "sha256": "5094cd824d5a3aaf539abce5ce359ded671422ad4e72584d0482229e109090c5",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP037/initial/receipt.png",
+    "sha256": "ee5e60eb1c90932b0695c1ba40cabaf40d9630ce216b25bb1f87ed67eabfe79e",
+    "bytes": 54510
+  },
+  {
+    "path": "fixtures/CP038/followup/receipt_complete.png",
+    "sha256": "b0f5a4020dfff8434621fe6ef9cf4d9c0936da31f6c4d32e0bab458e0f4caa52",
+    "bytes": 36902
+  },
+  {
+    "path": "fixtures/CP038/initial/messages.png",
+    "sha256": "acd5fb07dd72a7cb965542891fbf9de4716a035d70669011238236fca36a028c",
+    "bytes": 59321
+  },
+  {
+    "path": "fixtures/CP038/initial/narrative.txt",
+    "sha256": "4b319cd929ab540c8b796e2bc4014eacd257f3604e28184859931da54a0e9b49",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP038/initial/receipt.png",
+    "sha256": "70bf6480c1c246dd411c7dfa855683f2ce22698bc3ee585b8e4387e60b66d44f",
+    "bytes": 53939
+  },
+  {
+    "path": "fixtures/CP039/followup/receipt_complete.png",
+    "sha256": "e4e474a52c59c0f61160a98747070ba6f9075aa36df12f1b9fec2eb6956df1dc",
+    "bytes": 37205
+  },
+  {
+    "path": "fixtures/CP039/initial/messages.png",
+    "sha256": "acd5fb07dd72a7cb965542891fbf9de4716a035d70669011238236fca36a028c",
+    "bytes": 59321
+  },
+  {
+    "path": "fixtures/CP039/initial/narrative.txt",
+    "sha256": "2aa5060a4e40dbb9ca26b443ace51d2bcccb6761e62ff718f8881653090e9f9f",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP039/initial/receipt.png",
+    "sha256": "7308aa122ee51b07ce1fc4d9bd018c4e38b5fd3008d64c55f6de4c8b5102b7a1",
+    "bytes": 54159
+  },
+  {
+    "path": "fixtures/CP040/followup/receipt_complete.png",
+    "sha256": "35392090a91e492a85bbce89673badda0d78a43f142a871b90edaefab2281f45",
+    "bytes": 35916
+  },
+  {
+    "path": "fixtures/CP040/initial/messages.png",
+    "sha256": "acd5fb07dd72a7cb965542891fbf9de4716a035d70669011238236fca36a028c",
+    "bytes": 59321
+  },
+  {
+    "path": "fixtures/CP040/initial/narrative.txt",
+    "sha256": "fee5fa5ea827eaa78c9fe5789d99515865ec63ec4dd8fdb2aed0b21b2a6ede99",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP040/initial/receipt.png",
+    "sha256": "fbc198842eb602bee05f0ec3fc5674242adaaee64601c6abe6928f7d3429e427",
+    "bytes": 53126
+  },
+  {
+    "path": "fixtures/CP041/initial/messages.png",
+    "sha256": "6f1fa6ef4e7befd735b87fa41c02d5a7d2e27722f98b84fdcc885def56ae859e",
+    "bytes": 41568
+  },
+  {
+    "path": "fixtures/CP041/initial/narrative.txt",
+    "sha256": "5b0dc90d43ed62656ffa7f19b386c36a81f01da7d3c0b2861759997a2d0a9ada",
+    "bytes": 286
+  },
+  {
+    "path": "fixtures/CP041/initial/receipt.png",
+    "sha256": "c02215ad4e43136e1e85cbc66ee93a7e5874b7cd54bbc78e4a12b341c70c1c14",
+    "bytes": 53582
+  },
+  {
+    "path": "fixtures/CP042/initial/messages.png",
+    "sha256": "6f1fa6ef4e7befd735b87fa41c02d5a7d2e27722f98b84fdcc885def56ae859e",
+    "bytes": 41568
+  },
+  {
+    "path": "fixtures/CP042/initial/narrative.txt",
+    "sha256": "66d62fe1e0a28a97256a7f0242e185b86611f09dd5df058394417f657757c5cd",
+    "bytes": 285
+  },
+  {
+    "path": "fixtures/CP042/initial/receipt.png",
+    "sha256": "d88b14abb513656ab738b963f739d291fbc656fc26e668385e1980f6baa1f211",
+    "bytes": 52533
+  },
+  {
+    "path": "fixtures/CP043/initial/messages.png",
+    "sha256": "6f1fa6ef4e7befd735b87fa41c02d5a7d2e27722f98b84fdcc885def56ae859e",
+    "bytes": 41568
+  },
+  {
+    "path": "fixtures/CP043/initial/narrative.txt",
+    "sha256": "570dace9f1e49a8d3e6847e8b706c47119fd38e0287f2d94262764a7bf546696",
+    "bytes": 284
+  },
+  {
+    "path": "fixtures/CP043/initial/receipt.png",
+    "sha256": "e4b2fa3c12e20c8d0f03c3b3b7d96d63f4787691b2620aab9ab726ca7c0111ae",
+    "bytes": 53707
+  },
+  {
+    "path": "fixtures/CP044/initial/messages.png",
+    "sha256": "51a1471e031af2a51468bb07ff5adb82041fbf0ee556ef34101f0eb455528233",
+    "bytes": 39834
+  },
+  {
+    "path": "fixtures/CP044/initial/narrative.txt",
+    "sha256": "0a6cfd5de4a66e1897ac4892e16359dcb40e94be6268c7682d2efcc246458e8a",
+    "bytes": 283
+  },
+  {
+    "path": "fixtures/CP044/initial/receipt.png",
+    "sha256": "57aa433e579e82912df5c3197ede4595e78a2006a10b96b51db9f6581f118e84",
+    "bytes": 52799
+  },
+  {
+    "path": "fixtures/CP045/initial/messages.png",
+    "sha256": "dd58f135bcec2d39c6b6362c8ec63718f8439249d754864a4bc0c32a2f35fc30",
+    "bytes": 39157
+  },
+  {
+    "path": "fixtures/CP045/initial/narrative.txt",
+    "sha256": "d270dbe83be468fff3ad24fa1cb338d8703ad86f7eb5f2ab3aa0fa78091c3699",
+    "bytes": 208
+  },
+  {
+    "path": "fixtures/CP045/initial/receipt.png",
+    "sha256": "e70b0fb605a892203227e73a3a900f6d7263c7b648bf8a3bc5ece3780e9cec22",
+    "bytes": 53895
+  },
+  {
+    "path": "fixtures/CP046/initial/messages.png",
+    "sha256": "dd58f135bcec2d39c6b6362c8ec63718f8439249d754864a4bc0c32a2f35fc30",
+    "bytes": 39157
+  },
+  {
+    "path": "fixtures/CP046/initial/narrative.txt",
+    "sha256": "5e505715267636b7324596e249667f028522f3de76177eecd8a96da37c9e7239",
+    "bytes": 207
+  },
+  {
+    "path": "fixtures/CP046/initial/receipt.png",
+    "sha256": "47cd7fde4913bdc60e114de6cf6e53f9ac5e7b775a8541e18303af75223a0d37",
+    "bytes": 52967
+  },
+  {
+    "path": "fixtures/CP047/initial/messages.png",
+    "sha256": "dd58f135bcec2d39c6b6362c8ec63718f8439249d754864a4bc0c32a2f35fc30",
+    "bytes": 39157
+  },
+  {
+    "path": "fixtures/CP047/initial/narrative.txt",
+    "sha256": "da00396ec60f406053b5d26ae22ec3d9f4f560ef3d154f3abe81d02bde78bdfe",
+    "bytes": 206
+  },
+  {
+    "path": "fixtures/CP047/initial/receipt.png",
+    "sha256": "1f23e96ac037217468de905038aa1adfc2ec40ea22eecd63554894f2dafbbdbb",
+    "bytes": 53414
+  },
+  {
+    "path": "fixtures/CP048/initial/messages.png",
+    "sha256": "dd58f135bcec2d39c6b6362c8ec63718f8439249d754864a4bc0c32a2f35fc30",
+    "bytes": 39157
+  },
+  {
+    "path": "fixtures/CP048/initial/narrative.txt",
+    "sha256": "bb02aca30f606d314d3815ee3f4e4053ce2b33154b2e4b77df34fe2950e2734c",
+    "bytes": 205
+  },
+  {
+    "path": "fixtures/CP048/initial/receipt.png",
+    "sha256": "01498bd605b9ed4ea85b5aa2f0a2d89671409f1dd12017d1975ae88461e1c13f",
+    "bytes": 52493
+  }
+]

@@ -1,0 +1,24 @@
+FROM python:3.12-slim-trixie@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+WORKDIR /app
+RUN apt-get update && apt-get upgrade -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+# Official upstream LTS package; reviewed against the signed 1.4.6 release.
+ADD --checksum=sha256:d3ee9e401974855a1edc1761b1425417d126de618d5f0c91cd51209f69f6fcc2 https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.4.6/clamav-1.4.6.linux.x86_64.deb /tmp/clamav.deb
+RUN dpkg -i /tmp/clamav.deb && rm /tmp/clamav.deb && ldconfig \
+    && clamscan --version
+COPY requirements-scanner.lock.txt ./
+RUN python -m pip install --no-cache-dir pip==26.2.1 \
+    && pip install --no-cache-dir -r requirements-scanner.lock.txt && pip check
+COPY infra/google/freshclam.conf ./freshclam.conf
+RUN useradd --uid 10001 --create-home caseproof && mkdir -p /var/lib/clamav \
+    && chown -R caseproof:caseproof /var/lib/clamav
+USER caseproof
+RUN freshclam --config-file=/app/freshclam.conf --stdout
+# Application code after the signature layer: code changes do not refetch signatures.
+COPY caseproof/adapters/object_validation.py ./caseproof/adapters/object_validation.py
+COPY local_services/cloud_scanner.py ./local_services/cloud_scanner.py
+COPY scripts/scanner_start.py ./scanner_start.py
+COPY scripts/check_scanner.py ./check_scanner.py
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+CMD ["python", "scanner_start.py"]

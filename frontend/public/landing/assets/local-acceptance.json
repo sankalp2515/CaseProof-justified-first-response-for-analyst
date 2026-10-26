@@ -1,0 +1,133 @@
+{
+  "checks": [
+    "Fresh practice has no fabricated complaints",
+    "New complaint 1 submitted with actual image",
+    "Real OCR/worker settled complaint 1",
+    "New complaint arrives automatically in analyst queue",
+    "Arrival notification visible to analyst",
+    "Backend trail rendered as account graph",
+    "Actual missing-information link reply received",
+    "Reply creates a new assessment revision",
+    "Additional debit explicitly denied",
+    "Analyst reviewer-only control disabled",
+    "Both simulator acknowledgements recorded",
+    "Owner and awaiting_external follow-up saved",
+    "Follow-up survives reload",
+    "New complaint 2 submitted with actual image",
+    "Real OCR/worker settled complaint 2",
+    "New complaint arrives automatically in analyst queue",
+    "Arrival notification visible to analyst",
+    "Backend trail rendered as account graph",
+    "Actual missing-information link reply received",
+    "Reply creates a new assessment revision",
+    "Additional debit explicitly denied",
+    "Analyst reviewer-only control disabled",
+    "Both simulator acknowledgements recorded",
+    "Owner and awaiting_external follow-up saved",
+    "Follow-up survives reload",
+    "Victim no body overflow at 390",
+    "Victim no body overflow at 768",
+    "Analyst no body overflow at 1280",
+    "Analyst no body overflow at 1440",
+    "No uncaught browser errors"
+  ],
+  "cases": [
+    "CASE-82e443c19a42b5fb",
+    "CASE-020c2ae6209f6a79"
+  ],
+  "pageErrors": [],
+  "audits": [
+    {
+      "screen": "overview",
+      "violations": []
+    },
+    {
+      "screen": "trail",
+      "violations": []
+    },
+    {
+      "screen": "delivery",
+      "violations": []
+    },
+    {
+      "screen": "overview",
+      "violations": []
+    },
+    {
+      "screen": "trail",
+      "violations": []
+    },
+    {
+      "screen": "delivery",
+      "violations": []
+    },
+    {
+      "screen": "victim-390",
+      "violations": []
+    },
+    {
+      "screen": "victim-768",
+      "violations": []
+    },
+    {
+      "screen": "queue-1280",
+      "violations": []
+    },
+    {
+      "screen": "queue-1440",
+      "violations": []
+    }
+  ],
+  "providers": [
+    [
+      {
+        "mode": "local",
+        "provider": "tesseract",
+        "model_id": "tesseract-eng-hin-bounded-v5",
+        "prompt_hash": "",
+        "schema_version": "1",
+        "input_digest": "621b2dd53d9d84b9d6c4f267471875517810c61ee32cba7ecf6bf90cda9b1014",
+        "latency_ms": 4672.806108000032,
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "mode": "local",
+        "provider": "local-rules",
+        "model_id": "local-literal-rules-v2",
+        "prompt_hash": "",
+        "schema_version": "1",
+        "input_digest": "9450f9e7ef5a0eb49eb6c9d5ff17ee09aac5707c93af155cb2951a8bbba44454",
+        "latency_ms": 1.541193000093699,
+        "tokens_in": 0,
+        "tokens_out": 0
+      }
+    ],
+    [
+      {
+        "mode": "local",
+        "provider": "tesseract",
+        "model_id": "tesseract-eng-hin-bounded-v5",
+        "prompt_hash": "",
+        "schema_version": "1",
+        "input_digest": "d1be6c89d28aa0394ab8910a8656e670c40341f06a3ca718ae65535db0c407fd",
+        "latency_ms": 3546.957223999925,
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "mode": "local",
+        "provider": "local-rules",
+        "model_id": "local-literal-rules-v2",
+        "prompt_hash": "",
+        "schema_version": "1",
+        "input_digest": "adce253210a28f2ab5152e2b54843bd6c66367c9833b04a11b7db82b965de7c3",
+        "latency_ms": 2.0137019998855976,
+        "tokens_in": 0,
+        "tokens_out": 0
+      }
+    ]
+  ],
+  "provider": "local (real isolated worker/OCR/simulators)",
+  "cloudLive": false
+}

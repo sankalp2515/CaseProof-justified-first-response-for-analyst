@@ -1,0 +1,20 @@
+# Cloud runtime excludes local OCR binaries and development/evaluation files.
+# The canonical Dockerfile retains the frozen local OCR regression environment.
+FROM python:3.12-slim-trixie@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+WORKDIR /app
+RUN apt-get update && apt-get upgrade -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends ca-certificates fonts-noto-core \
+    && rm -rf /var/lib/apt/lists/*
+COPY requirements.lock.txt ./
+RUN python -m pip install --no-cache-dir pip==26.2.1 \
+    && pip install --no-cache-dir -r requirements.lock.txt && pip check
+COPY caseproof ./caseproof
+COPY mock_services ./mock_services
+COPY local_services ./local_services
+COPY policy ./policy
+COPY LICENSE ./LICENSE
+RUN useradd --uid 10001 --create-home caseproof \
+    && mkdir -p /data /app/var && chown caseproof:caseproof /data /app/var
+USER caseproof
+CMD ["python", "-m", "uvicorn", "caseproof.cloud.entrypoint:app", "--host", "0.0.0.0", "--port", "8080", "--no-access-log"]

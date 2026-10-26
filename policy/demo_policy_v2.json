@@ -1,0 +1,172 @@
+{
+  "version": "demo-policy-v6-receipt-recovery",
+  "authority": "Synthetic team-authored demo policy; not a bank SOP",
+  "required_facts": [
+    "amount",
+    "date",
+    "transaction_reference",
+    "deception_account"
+  ],
+  "catalogue": [
+    {
+      "catalogue_id": "clarify_amount",
+      "text": "Please clarify the payment amount.",
+      "facts": [
+        "amount"
+      ],
+      "components": {
+        "R": 3,
+        "C": 3,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 0
+      },
+      "urgency_weight": 1
+    },
+    {
+      "catalogue_id": "clarify_transaction_time",
+      "text": "Please confirm the payment date and time.",
+      "facts": [
+        "date"
+      ],
+      "components": {
+        "R": 3,
+        "C": 3,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 0
+      },
+      "conflict_relevance": 4,
+      "urgency_weight": 2
+    },
+    {
+      "catalogue_id": "request_reference_crop",
+      "text": "Please share a crop showing the payment reference.",
+      "facts": [
+        "transaction_reference"
+      ],
+      "components": {
+        "R": 3,
+        "C": 1,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 1
+      },
+      "urgency_weight": 3
+    },
+    {
+      "catalogue_id": "request_transaction_receipt",
+      "text": "Please share the receipt for this payment.",
+      "facts": [
+        "amount",
+        "date",
+        "transaction_reference"
+      ],
+      "components": {
+        "R": 2,
+        "C": 0,
+        "U": 1,
+        "A": 2,
+        "E": 2,
+        "P": 1
+      },
+      "urgency_weight": 0
+    },
+    {
+      "catalogue_id": "request_readable_receipt",
+      "text": "This image could not be read. Please upload a readable receipt crop or tell us it is unavailable.",
+      "facts": [
+        "readable_receipt"
+      ],
+      "components": {
+        "R": 5,
+        "C": 0,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 1
+      },
+      "urgency_weight": 3
+    },
+    {
+      "catalogue_id": "describe_deception",
+      "text": "Please describe what the caller asked you to do.",
+      "facts": [
+        "deception_account"
+      ],
+      "components": {
+        "R": 3,
+        "C": 0,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 0
+      },
+      "urgency_weight": 2
+    },
+    {
+      "catalogue_id": "confirm_additional_transfer",
+      "text": "Please confirm whether the additional debit belongs to this complaint and, if available, share the relevant call-log crop.",
+      "facts": [
+        "all_transfers_accounted"
+      ],
+      "components": {
+        "R": 4,
+        "C": 2,
+        "U": 3,
+        "A": 2,
+        "E": 1,
+        "P": 1
+      },
+      "urgency_weight": 4
+    },
+    {
+      "catalogue_id": "confirm_transaction_reference",
+      "text": "Please confirm the payment reference.",
+      "facts": [
+        "reference_conflict"
+      ],
+      "components": {
+        "R": 3,
+        "C": 3,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 0
+      },
+      "urgency_weight": 1
+    },
+    {
+      "catalogue_id": "identify_receipt_payment",
+      "text": "We could not match this receipt reliably. Please upload a clearer receipt showing the amount, payment time and payee, or tell us it is unavailable.",
+      "facts": [
+        "receipt_association"
+      ],
+      "components": {
+        "R": 5,
+        "C": 3,
+        "U": 1,
+        "A": 2,
+        "E": 1,
+        "P": 0
+      },
+      "urgency_weight": 1
+    }
+  ],
+  "blocked": [
+    "OTP",
+    "PIN",
+    "password",
+    "CVV",
+    "full device access",
+    "full screen access",
+    "full chat history",
+    "unrelated ID document",
+    "irrelevant national ID"
+  ],
+  "score_formula": "3R+2C+U+A-2E-3P",
+  "bank_data_max_age_seconds": 900
+}

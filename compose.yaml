@@ -1,0 +1,172 @@
+# CaseProof local stack: independent services on one Compose network.
+# Only the frontend publishes a host port (loopback). Service-to-service traffic
+# uses Compose DNS names on the `caseproof` network. Local mode is synthetic and
+# not live generative AI; Google deployment uses the separate cloud images.
+name: caseproof-devpost-local
+
+x-backend-env: &backend-env
+  RUNTIME_BACKEND: local
+  DATA_DIR: /data
+  SQLITE_URL: sqlite:////data/caseproof.db
+  DUCKDB_PATH: /data/bank.duckdb
+  OBJECT_DIR: /data/objects
+  TRAIL_FEED_URL: http://trail-feed:8000
+  LOCAL_OCR_URL: http://ocr:8000
+  MOCK_SERVICES_URL: http://simulator:8000
+  LOCAL_SERVICE_HOSTS: '["simulator", "ocr", "trail-feed"]'
+  LLM_PROVIDER: local
+  LLM_MODE: local
+  EXTERNAL_WORKER: "true"
+  JOB_LEASE_SECONDS: "15"
+  CUSTOMER_PORTAL: "true"
+  PRELOADED_DEMO: "true"
+  PUBLIC_BASE_URL: ${CASEPROOF_PUBLIC_BASE_URL:-http://127.0.0.1:8246}
+
+x-backend: &backend
+  build: {context: ., target: service}
+  init: true
+  networks: [caseproof]
+  restart: unless-stopped
+  stop_grace_period: 30s
+
+x-http-health: &http-health
+  test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+  interval: 10s
+  timeout: 5s
+  retries: 12
+  start_period: 20s
+
+services:
+  frontend:
+    image: caseproof-devpost-frontend:local
+    build: {context: ./frontend}
+    init: true
+    networks: [caseproof]
+    ports: ["127.0.0.1:${CASEPROOF_PORT:-8246}:8080"]
+    environment:
+      CASEPROOF_API_UPSTREAM: api:8000
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD-SHELL, "wget -qO- http://127.0.0.1:8080/app/ >/dev/null && wget -qO- http://127.0.0.1:8080/health | grep -q ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  api:
+    <<: *backend
+    image: caseproof-devpost-api:local
+    environment: *backend-env
+    volumes: [application-data:/data]
+    depends_on:
+      preload: {condition: service_completed_successfully}
+      ocr: {condition: service_healthy}
+      trail-feed: {condition: service_healthy}
+      simulator: {condition: service_healthy}
+    healthcheck:
+      <<: *http-health
+      # /ready also requires OCR, feed, simulator and a live worker heartbeat.
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=12)"]
+      timeout: 15s
+      start_period: 60s
+
+  worker:
+    <<: *backend
+    image: caseproof-devpost-worker:local
+    command: [python, -m, local_services.worker]
+    environment: *backend-env
+    volumes: [application-data:/data]
+    depends_on:
+      preload: {condition: service_completed_successfully}
+      ocr: {condition: service_healthy}
+      trail-feed: {condition: service_healthy}
+      simulator: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -m, local_services.health]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  preload:
+    <<: *backend
+    image: caseproof-devpost-preload:local
+    command: [python, -m, local_services.preload]
+    environment: *backend-env
+    volumes: [application-data:/data]
+    restart: "no"
+    depends_on:
+      trail-feed: {condition: service_healthy}
+      simulator: {condition: service_healthy}
+
+  ocr:
+    <<: *backend
+    image: caseproof-devpost-ocr:local
+    build: {context: ., target: ocr}
+    environment:
+      DATA_DIR: /tmp/ocr
+    healthcheck: *http-health
+
+  trail-feed:
+    <<: *backend
+    image: caseproof-devpost-trail-feed:local
+    command: [python, -m, uvicorn, local_services.feed:app, --host, 0.0.0.0, --port, "8000", --no-access-log]
+    environment:
+      DATA_DIR: /data
+      TRAIL_FEED_PATH: /data/trail_feed.json
+    volumes: [feed-data:/data]
+    healthcheck: *http-health
+
+  simulator:
+    <<: *backend
+    image: caseproof-devpost-simulator:local
+    command: [python, -m, uvicorn, mock_services.bank_mock:app, --host, 0.0.0.0, --port, "8000", --no-access-log]
+    environment:
+      DATA_DIR: /data
+    volumes: [simulator-data:/data]
+    healthcheck: *http-health
+
+  # --- Validation profile: `docker compose --profile validation run --rm <name>` ---
+  tests:
+    image: caseproof-devpost-tests:local
+    build: {context: ., target: test}
+    profiles: [validation]
+    network_mode: none
+    environment:
+      DATA_DIR: /tmp/caseproof-tests
+      SQLITE_URL: sqlite:////tmp/caseproof-tests/cases.db
+      DUCKDB_PATH: /tmp/caseproof-tests/bank.duckdb
+      OBJECT_DIR: /tmp/caseproof-tests/objects
+      LLM_PROVIDER: gemini
+      LLM_MODE: live
+      EXTERNAL_WORKER: "false"
+      CUSTOMER_PORTAL: "false"
+    restart: "no"
+
+  # Fault injection against this project's own containers (OCR outage, worker kill,
+  # restart of every service). Mounts the Docker socket: run deliberately only.
+  recovery-check:
+    image: caseproof-devpost-tests:local
+    build: {context: ., target: test}
+    profiles: [validation]
+    networks: [caseproof]
+    user: "0:0"
+    command: [python, -m, local_services.recovery]
+    environment:
+      API_BASE_URL: http://frontend:8080
+      DOCKER_PROJECT: ${COMPOSE_PROJECT_NAME:-caseproof}
+      RECOVERY_OUTPUT: /out/recovery.json
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./var/local-validation:/out
+    restart: "no"
+
+networks:
+  caseproof:
+    name: caseproof-devpost-local-network
+
+volumes:
+  application-data:
+  feed-data:
+  simulator-data:

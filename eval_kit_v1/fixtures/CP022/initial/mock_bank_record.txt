@@ -1,0 +1,6 @@
+SYNTHETIC INSTITUTION RECORD
+Customer Rahul Demo
+Reference SYNTH-TX-0022
+Amount INR 13435
+Date 2026-10-02T11:29:00+05:30
+This ledger is a fictional test authority, not a real bank verification.

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cedar Demo Bank | Report a scam</title>
+    <link rel="stylesheet" href="/inspector.css" />
+    <style>
+      .bank-page {
+        max-width: 880px;
+        margin: 32px auto;
+        padding: 0 20px;
+      }
+      .bank-page h1 {
+        font-size: 32px;
+      }
+      .bank-page .panel {
+        margin-bottom: 20px;
+      }
+      .bank-page label {
+        display: block;
+        margin: 14px 0;
+      }
+      .bank-page input[type="checkbox"] {
+        width: auto;
+        margin-right: 12px;
+      }
+      .payment-choice {
+        border-bottom: 1px solid #dce3e7;
+        padding: 14px 0;
+      }
+      .payment-choice small {
+        display: block;
+        margin-left: 28px;
+        color: #536875;
+      }
+      .bank-page textarea,
+      .bank-page select,
+      .bank-page input:not([type="checkbox"]) {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .bank-page button {
+        margin: 8px 8px 8px 0;
+      }
+      .bank-page a {
+        color: #12695f;
+      }
+      .bank-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .bank-page .notice {
+        display: block;
+      }
+      .bank-page [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="/report">Cedar Demo Bank</a
+      ><span class="environment">Synthetic prototype</span
+      ><a href="/inspector">Analyst workspace</a>
+    </header>
+    <main class="bank-page">
+      <h1>Report a scam or an unrecognised payment</h1>
+      <button id="practice-session" class="secondary">
+        Start a fresh practice session
+      </button>
+      <p class="muted">
+        Creates independent fictional bank records for this browser. No
+        complaint or decision is pre-recorded. Previous sessions are preserved.
+      </p>
+      <p>
+        Tell your bank what happened. You can submit even if you do not have a
+        receipt or remember every detail.
+      </p>
+      <aside class="panel">
+        <strong>Act now if money has been taken</strong>
+        <p>
+          Contact your bank through its official channels to secure affected
+          banking services. Call <strong>1930</strong> or visit
+          <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener"
+            >cybercrime.gov.in</a
+          >. Do not wait to finish this form.
+        </p>
+        <p class="muted">
+          This fictional bank does not submit official complaints, freeze funds
+          or guarantee recovery. Never provide an OTP, PIN or password.
+        </p>
+      </aside>
+      <p id="victim-status" role="status" aria-live="polite"></p>
+      <section class="panel" id="demo-entry">
+        <h2>Try as a fictional customer</h2>
+        <p>
+          Preloaded bank records are ready. This selection is a demo identity,
+          not production login.
+        </p>
+        <label>Customer<select id="victim-person"></select></label
+        ><button id="victim-enter">Continue as this customer</button>
+      </section>
+      <section id="victim-account" hidden>
+        <div class="bank-top">
+          <h2 id="victim-name"></h2>
+          <button id="victim-switch" class="secondary">
+            Switch demo customer
+          </button>
+        </div>
+        <p id="demo-time" class="muted"></p>
+        <section class="panel">
+          <h2>Your complaints</h2>
+          <div id="victim-cases"></div>
+          <button id="victim-new" class="secondary">
+            Report another incident
+          </button>
+        </section>
+        <section class="panel" id="complaint-receipt" hidden>
+          <h2 id="receipt-title">Your bank has received your complaint</h2>
+          <p id="receipt-id"></p>
+          <p id="receipt-state"></p>
+          <div id="victim-inbox"></div>
+          <p class="muted">
+            A report being delivered does not mean money is held or returned.
+          </p>
+          <button id="receipt-refresh" class="secondary">
+            Check for updates
+          </button>
+        </section>
+        <form class="panel" id="victim-form">
+          <h2>Which payments are you reporting?</h2>
+          <p>
+            Choose the payments you dispute. Leave them unselected if you cannot
+            find the payment or are unsure.
+          </p>
+          <div id="victim-transactions"></div>
+          <label
+            >What happened?<textarea
+              id="victim-story"
+              rows="5"
+              minlength="5"
+              maxlength="10000"
+              required
+              placeholder="Describe what you remember in your own words."
+            ></textarea>
+          </label>
+          <label
+            >How were the payments made?<select id="victim-authorisation">
+              <option value="unsure">I am unsure</option>
+              <option value="deceived">
+                I made the payment after being deceived
+              </option>
+              <option value="unrecognised">
+                I do not recognise making the payment
+              </option>
+            </select></label
+          >
+          <label
+            >When did the scammer first contact you? (optional)<input
+              type="datetime-local"
+              id="victim-contact"
+          /></label>
+          <p class="muted">
+            Leave blank if unknown. The bank records the time your complaint
+            arrives.
+          </p>
+          <label
+            >Attach evidence (optional)<input
+              type="file"
+              id="victim-files"
+              multiple
+              accept="image/png,image/jpeg,text/plain"
+          /></label>
+          <p class="muted">
+            Receipts, messages or call logs: PNG, JPEG or UTF-8 text, up to 5
+            MiB each. Up to four files. You can submit without attachments.
+          </p>
+          <details>
+            <summary>Already reported elsewhere?</summary>
+            <label
+              >Existing bank reference<input
+                id="victim-bank-ref"
+                maxlength="120" /></label
+            ><label
+              >NCRP acknowledgement<input
+                id="victim-ncrp-ref"
+                maxlength="120" /></label
+            ><label
+              >FIR reference<input id="victim-fir-ref" maxlength="120"
+            /></label>
+          </details>
+          <button id="victim-submit">
+            Submit complaint to Cedar Demo Bank
+          </button>
+        </form>
+      </section>
+    </main>
+    <script src="/victim.js" defer></script>
+  </body>
+</html>
