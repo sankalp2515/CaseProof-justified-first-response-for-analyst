@@ -2,6 +2,8 @@
 
 Current release record: **26 October 2026**. The source, plans, runtime profiles and demonstration must be assessed together. A successful local recording does not establish public cloud availability.
 
+**27 October, 01:24 IST recheck:** Vertex still returned `403 PERMISSION_DENIED: Spend cap breached`, and Billing now reports the increased INR 2,000 Vertex cap as **ENFORCED again**. The earlier CONFIGURED status below was transitional, not evidence of recovery. Cloud Run's INR 5,000 cap remains CONFIGURED. No further budget increase or billing-route switch has been made. Both repository CI runs for `312b821` and `2876d07` passed.
+
 ## Product and source
 
 The submission package contains the complete CaseProof React/Vite application, Python workflow backend, synthetic banking services, evidence processing, independent review, report delivery and follow-up. The [scope](../scope.md), [PRD](../prd.md) and [specification](../spec.md) describe this implementation. [Source provenance](../SOURCE_PROVENANCE.md) identifies the incorporated team-owned application; new publication does not rewrite its development history.

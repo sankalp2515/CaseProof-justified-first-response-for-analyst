@@ -12,7 +12,7 @@ Turn a customer's report, scattered evidence and bank records into a cited inves
 
 Synthetic practice data · No sign-in required for the demo · Separate analyst and reviewer personas
 
-**Demo status:** Public access is restored. Live cloud processing is being revalidated after a spend-cap reset; see the [current verification record](docs/SUBMISSION_VERIFICATION.md). The local live-Gemini walkthrough is verified separately.
+**Demo status:** Public access is restored, but cloud Gemini processing is currently blocked by an enforced Vertex spending cap. See the [current verification record](docs/SUBMISSION_VERIFICATION.md). The local live-Gemini walkthrough is verified separately.
 
 </div>
 
